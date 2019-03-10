@@ -32,13 +32,6 @@ class Login extends Component{
                     <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="insert password" />
                 </FormGroup>
                 <Button color="success" onClick={Login}>Login</Button> 
-                {/* <div align="center">
-                   <span>Username:</span>
-                   <input value="text" onChange={this.handleChangeUsername}></input><br/>
-                   <span>Password:</span>
-                   <input value="text" onChange={this.handleChangePassword}></input><br/>
-                   <Button color="success" onClick={Login}>Login</Button> 
-                </div> */}
             </Form>    
         )
     }
