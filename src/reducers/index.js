@@ -6,6 +6,9 @@ import productCreate from './productCreate';
 import userUpdate from './userUpdate';
 import productUpdate from './productUpdate';
 import order from './createOrder';
+import listInventory from './listInventory';
+import listOrders from './listOrders';
+import listReturns from './listReturns';
 
 import {combineReducers} from 'redux';
 
@@ -17,7 +20,10 @@ const combinedReducer=combineReducers({
     productCreate,
     userUpdate,
     productUpdate,
-    order
+    order,
+    listInventory,
+    listOrders,
+    listReturns,
 })
 
 export default combinedReducer;
