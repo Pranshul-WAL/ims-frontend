@@ -21,4 +21,20 @@ export const createProduct=(productName,salePrice,productDescription,Quantity)=>
         }
     })
 }
+
+
+export const updateProduct=(productName,salePrice,productDescription,Quantity)=>{
+    const axios=axiosInstance();
+    return axios({
+        method:'POST',
+        url:'/user/admin/product/update',
+        data:{
+            productName:productName,
+            salePrice:salePrice,
+            productDescription:productDescription,
+            Quantity:Quantity
+        }
+    })
+}
+
 //make response.data static

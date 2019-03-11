@@ -4,7 +4,7 @@ import {Button,Input} from 'reactstrap';
 
 
 
-class ProductCreate extends Component {
+class ProductUpdate extends Component {
     constructor(props){
         super(props);
 
@@ -12,7 +12,6 @@ class ProductCreate extends Component {
         this.handleChangeSalePrice=this.handleChangeSalePrice.bind(this);
         this.handleChangeProductDescription=this.handleChangeProductDescription.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
-        this.createProductHandler = this.createProductHandler.bind(this)
     }
     handleChangeProductName=(e)=>{
         this.props.getProductname(e.target.value);
@@ -26,14 +25,14 @@ class ProductCreate extends Component {
     handleChangeQuantity=(e)=>{
         this.props.getQuantity(e.target.value);
     }
-    createProductHandler(){
-        this.props.createProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)
+    updateProductHandler(){
+        this.props.updateProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)
     }
     
     render() {
         return (
             <div align="center">
-                <h1>Create New Product</h1><hr/>
+                <h1>Update Product</h1><hr/>
                 <label>Product Name:</label>
                 <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
                 <label>Sales Price:</label>
@@ -42,10 +41,10 @@ class ProductCreate extends Component {
                 <Input type="text"  value={this.props.productDescription} onChange={this.handleChangeProductDescription} placeholder="Enter description"></Input>
                 <label>Quantity:</label>
                 <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
-                <Button onClick={this.createProductHandler}>Create</Button>
+                <Button onClick={this.updateProductHandler}>Update</Button>
             </div>
         );
     }
 }
 
-export default ProductCreate;
+export default ProductUpdate;

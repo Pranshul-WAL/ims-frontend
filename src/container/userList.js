@@ -22,7 +22,13 @@ const MapDispatchToProps=(dispatch)=>{
 
                 dispatch({type: 'SET_LOADING', payload: false})
             })()
+
+        },
+        deleteUser:(id)=>{
+            dispatch({type:'SET_LOADING', payload: true})
+
         }
+
     }
 }
 

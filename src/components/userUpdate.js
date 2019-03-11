@@ -39,7 +39,7 @@ class UserUpdate extends Component {
                 <Input type="text"  value={this.props.role} onChange={this.handleChangeRole} placeholder="Enter role"></Input><br/>
                 {/* <Button onClick={()=>
                     { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
-                <Button onClick={this.updateUserHandler}>Create</Button>    
+                <Button onClick={this.updateUserHandler}>Update</Button>    
             </div>
         );
     }
