@@ -16,11 +16,11 @@ const mapDispatchToProps=dispatch=>{
             (async()=>{
                 dispatch({type:'SET_LOADING', payload: true})
 
-                let loginResponse = await login(username,password)
-                
-                console.log(loginResponse.data);
-                // localStorage.setItem('token', 'Hello')
-                // localStorage.setItem('role', loginResponse.data.user.role)
+               let loginResponse = await login(username,password)
+                localStorage.setItem('token', loginResponse.data.token)
+                localStorage.setItem('role', loginResponse.data.user.role)
+
+                dispatch({type: 'CLEAR_FORM'})
 
                 dispatch({type:'SET_LOADING', payload: false})
             })()

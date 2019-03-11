@@ -22,10 +22,14 @@ class Login extends Component{
         this.props.getPassword(e.target.value)
     }
     loginHandler(username, password) {
-        this.props.loginUser(username, password)
+        this.props.loginUser(username, password);
+        
+        
     }
     render(){
         return(
+            <div align='center'>
+            <h1>Login</h1><hr/>
             <Form>
                 <FormGroup>
                     <Label for="name">Username:</Label>
@@ -44,6 +48,7 @@ class Login extends Component{
                    <Button color="success" onClick={Login}>Login</Button> 
                 </div> */}
             </Form>    
+            </div>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 
-class listOrders extends Component {
+class ListReturn extends Component {
     componentDidMount() {
         this.props.fetchReturns()
     }
@@ -35,4 +35,4 @@ class listOrders extends Component {
     }
 }
 
-export default listOrders;
+export default ListReturn;

@@ -17,7 +17,7 @@ const MapDispatchToProps=(dispatch)=>{
         getUsername:(value)=>dispatch({type:'GET_NAME',payload:value}),
         getPassword:(value)=>dispatch({type:'GET_PASSWORD', payload:value}),
         getRole:(value)=>dispatch({type:'GET_ROLE', payload:value}),
-        createProduct:(username, password, role)=>{
+        createUser:(username, password, role)=>{
             (async() => {
                 try{
                     dispatch({type:'SET_LOADING', payload:true})

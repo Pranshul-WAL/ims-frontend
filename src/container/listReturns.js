@@ -1,7 +1,7 @@
-import returns from '../component/listReturns';
+import ListReturn from '../component/listReturns';
 import {connect} from 'react-redux';
 
-import listReturns from '../api/listReturns';
+import listReturn from '../api/listReturn';
 
 
 const MapStateToProps = (state) => {
@@ -13,10 +13,10 @@ const MapStateToProps = (state) => {
 
 const  MapDispatchToProps = (dispatch) => {
     return {
-        fetchOrders : () => {
+        fetchReturns : () => {
            (async() => {
                dispatch({type:'ISLOADING', payload: true });
-               let response = await listReturns();
+               let response = await listReturn();
                dispatch({type:'LISTRETURNS', payload: response.data});
                dispatch({type:'ISLOADING', payload: false});
             })()
@@ -24,4 +24,4 @@ const  MapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(MapStateToProps, MapDispatchToProps)(returns);
+export default connect(MapStateToProps, MapDispatchToProps)(ListReturn);

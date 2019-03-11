@@ -18,6 +18,9 @@ const login=(state=initialState,action)=>{
                 password:action.payload
             }
         }
+        case 'CLEAR_FORM':{
+            return initialState
+        }
         default:{
             return state
         }

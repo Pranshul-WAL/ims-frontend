@@ -14,7 +14,7 @@ const listReturns = (state = initialState, action) => {
             ...state,
             returns: action.payload,
         }
-        default: return state;
+        default: return state
     }
     
 }
