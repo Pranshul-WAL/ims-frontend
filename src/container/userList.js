@@ -26,12 +26,13 @@ const MapDispatchToProps=(dispatch)=>{
 
         },
         deleteUser:(id)=>{
-            dispatch({type:'SET_LOADING', payload: true})
+            (async() => {
+                dispatch({type:'SET_LOADING', payload: true})
 
-            await deleteUser()
+                await deleteUser(id)
 
-            dispatch({type:'SET_LOADING', payload: false})
-
+                dispatch({type:'SET_LOADING', payload: false})
+            })()
         }
 
     }
