@@ -1,6 +1,7 @@
 import UserList from '../components/userList';
 import {connect} from 'react-redux';
 import { listUser } from '../api/users';
+import {deleteUser} from '../api/users'
 
 const MapStateToProps=(state)=>{
     //console.log(state);
@@ -26,6 +27,10 @@ const MapDispatchToProps=(dispatch)=>{
         },
         deleteUser:(id)=>{
             dispatch({type:'SET_LOADING', payload: true})
+
+            await deleteUser()
+
+            dispatch({type:'SET_LOADING', payload: false})
 
         }
 

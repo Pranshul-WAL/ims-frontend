@@ -23,11 +23,11 @@ export const createProduct=(productName,salePrice,productDescription,Quantity)=>
 }
 
 
-export const updateProduct=(productName,salePrice,productDescription,Quantity)=>{
+export const updateProduct=(productName,salePrice,productDescription,Quantity, productId)=>{
     const axios=axiosInstance();
     return axios({
-        method:'POST',
-        url:'/user/admin/product/update',
+        method:'PUT',
+        url:`/user/admin/product/update/${productId}`,
         data:{
             productName:productName,
             salePrice:salePrice,
