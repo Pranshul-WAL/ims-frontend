@@ -34,7 +34,7 @@ class ProductList extends Component {
                                         <td>{productDetails.productDescription}</td>
                                         <td>{productDetails.Quantity}</td>
                                         <td><Button onClick={()=>{this.deleteHandler(productDetails.id)}}>Delete</Button></td>
-                                        <td><Link to={`/updateUser/${productDetails.id}`}>Update</Link></td>
+                                        <td><Link to={`/update/${productDetails.id}`}>Update</Link></td>
                                     </tr>
                         )})
                     }

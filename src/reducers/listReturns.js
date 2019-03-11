@@ -3,7 +3,7 @@ const initialState = {
     returns: [],
 }
 
-const listOrders = (state = initialState, action) => {
+const listReturns = (state = initialState, action) => {
     // eslint-disable-next-line default-case
     switch(action.type) {
         case 'IsLOADING': return {
@@ -14,8 +14,9 @@ const listOrders = (state = initialState, action) => {
             ...state,
             returns: action.payload,
         }
+        default: return state
     }
     
 }
 
-export default listOrders;
+export default listReturns;

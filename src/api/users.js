@@ -14,7 +14,7 @@ export const createNew=(username,password,role)=>{
         method:'POST',
         url:'/user/admin/enduser/add',
         data:{
-            username:username,
+            userName:username,
             password:password,
             role:role
         }

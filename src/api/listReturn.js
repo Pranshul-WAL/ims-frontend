@@ -1,6 +1,6 @@
-import axiosInstance from '.';
+import axiosInstance from './';
 
-export const createReturn = () => {
+export const listReturn = () => {
     const axios = axiosInstance();
     return axios({
         method: 'GET',
