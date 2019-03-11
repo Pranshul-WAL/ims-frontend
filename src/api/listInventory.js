@@ -1,4 +1,4 @@
-import axiosInstance from '.';
+import axiosInstance from './';
 
 export const listInventory = () => {
     const axios = axiosInstance();
