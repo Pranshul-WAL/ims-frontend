@@ -5,7 +5,8 @@ const axiosInstance = () => {
         baseURL: 'http://localhost:8001/api/',
         headers: {
             'Content-Type':'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImFkbWluIiwiaWQiOjEsImlhdCI6MTU1MjI0MjUyMn0.RWQK9Y7YwPjoVt72t_HEZpFY-H29KfL_IskArpFnzJU',
+            // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImFkbWluIiwiaWQiOjEsImlhdCI6MTU1MjI3NjI4Mn0.PaCKWdWzcdzb8k8ysn6nVfHIrnYfTuuHGPpZAlD7EhE'
         }
     })
 }

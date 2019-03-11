@@ -33,3 +33,12 @@ export const update=(username,password,role)=>{
         }
     })
 }
+
+export const deleteUser=(id)=>{
+    const axios=axiosInstance();
+    return axios({
+        method:'DELETE',
+        url:`/user/admin/enduser/delete/${id}`,
+        
+    })
+}
