@@ -6,8 +6,8 @@ import {deleteUser} from '../api/users'
 const MapStateToProps=(state)=>{
     //console.log(state);
     return{
-        userDetails: state.userReducer.userDetails,
-        isLoading:state.userReducer.isLoading
+        userDetails: state.userList.userDetails,
+        isLoading:state.userList.isLoading
     }
 }
 

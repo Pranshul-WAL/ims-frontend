@@ -1,11 +1,11 @@
 import ProductList from '../components/productList';
-import {connect} from 'redux';
+import {connect} from 'react-redux';
 import {listProducts} from '../api/products'
 
 const MapStateToPrpos=(state)=>{
     return{
-        isLoading:state.ProductList.isLoading,
-        productDetails:state.ProductList.productDetails
+        isLoading:state.productList.isLoading,
+        productDetails:state.productList.productDetails
     }
 }
 
@@ -17,7 +17,7 @@ const MapDispatchToProps=(dispatch)=>{
                 let response= await listProducts();
                 dispatch({type:'SET_PRODUCT_DETAILS', payload:response.data});
                 dispatch({type:'SET_LOADING',payload:false});
-            })
+            })()
         }
     }
 }

@@ -6,6 +6,8 @@ import UserPage from "./components/userPage";
 import UserCreate from "./container/userCreate";
 import UserList from "./container/userList";
 import ProductPage from "./components/productPage";
+import ProductCreate from './container/productCreate';
+import ProductList from './container/productList'
 
 
 class Main extends React.Component{
@@ -23,6 +25,8 @@ class Main extends React.Component{
                   <Route path='/add' component={UserCreate}></Route>
                   <Route path='/list' component={UserList}></Route>
                   <Route path='/product' component={ProductPage}></Route>
+                  <Route path='/addProduct' component={ProductCreate}></Route>
+                  <Route path='/ListProduct' component={ProductList}></Route>
               </Switch>
             </Router>
         )
