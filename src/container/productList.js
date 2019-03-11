@@ -4,8 +4,8 @@ import {listProducts} from '../api/products'
 
 const MapStateToPrpos=(state)=>{
     return{
-        isLoading:state.ProductList.isLoading,
-        productDetails:state.ProductList.productDetails
+        isLoading:state.productList.isLoading,
+        productDetails:state.productList.productDetails
     }
 }
 

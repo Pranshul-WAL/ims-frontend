@@ -37,7 +37,7 @@ class UserList extends Component{
                             {this.props.userDetails.map((userDetails)=>{
                                 return(
                                     <tr>
-                                        <td>{userDetails.username}</td>
+                                        <td>{userDetails.userName}</td>
                                         <td>{userDetails.password}</td>
                                         <td>{userDetails.role}</td>
                                         <td><Button onClick={()=>{this.deleteHandler(userDetails.id)}}>Delete</Button></td>

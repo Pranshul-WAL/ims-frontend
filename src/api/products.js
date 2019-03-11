@@ -1,6 +1,6 @@
 import axiosInstance from './'
 
-export const listProducts = (role) => {
+export const listProducts = () => {
     const axios = axiosInstance();
     return axios({
         method: 'GET',

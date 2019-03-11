@@ -6,8 +6,8 @@ import {deleteUser} from '../api/users'
 const MapStateToProps=(state)=>{
     //console.log(state);
     return{
-        userDetails: state.userReducer.userDetails,
-        isLoading:state.userReducer.isLoading
+        userDetails: state.userList.userDetails,
+        isLoading:state.userList.isLoading
     }
 }
 
@@ -19,7 +19,7 @@ const MapDispatchToProps=(dispatch)=>{
 
                 let response = await listUser()
 
-                dispatch({type: 'SET_USER_DETAILS', payload: response.data})
+                dispatch({type: 'SET_USER_DETAILS', payload: response.data.users})
 
                 dispatch({type: 'SET_LOADING', payload: false})
             })()

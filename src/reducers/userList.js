@@ -5,16 +5,15 @@ const initialState={
 
 const userReducer=(state=initialState,action)=>{
     switch(action.type){
-        case 'SET_LOADING':return{
+        case 'SET_LOADING': return{
             ...state,
-            isLoading:action.payload
+            isLoading:action.payload,
         }
-        case 'SET_USER_DETAILS':return{
+        case 'SET_USER_DETAILS': return{
             ...state,
-            userDetails:action.payload
+            userDetails:action.payload,
         }
-        default:
-        return state
+        default: return state;
     }
 }
 
