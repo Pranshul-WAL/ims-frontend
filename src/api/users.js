@@ -4,7 +4,7 @@ export const listUser = (role) => {
     const axios = axiosInstance();
     return axios({
         method: 'GET',
-        url: '/user/admin/enduser/list/Admin',
+        url: '/user/admin/enduser/listAll',
     })
 }
 
