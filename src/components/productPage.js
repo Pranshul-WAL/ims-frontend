@@ -6,8 +6,8 @@ class ProductPage extends Component {
     render() {
         return (
             <div align='center'>
-                <Link to='/add'>Add Product</Link>
-                <Link to='/list'>List Product</Link>
+                <Link to='/addProduct'>Add Product</Link>
+                <Link to='/listProduct'>List Product</Link>
                 
             </div>
             

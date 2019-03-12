@@ -6,7 +6,9 @@ import UserPage from "./components/userPage";
 import UserCreate from "./container/userCreate";
 import UserList from "./container/userList";
 import ProductPage from "./components/productPage";
-import ProductCreate from './components/productCreate'
+import ProductCreate from './container/productCreate';
+import ListProducts  from "./container/productList";
+import ProductUpdate from "./container/productUpdate";
 
 
 class Main extends React.Component{
@@ -25,6 +27,8 @@ class Main extends React.Component{
                   <Route path='/list' component={UserList}></Route>
                   <Route path='/product' component={ProductPage}></Route>
                   <Route path='/addProduct' component={ProductCreate}></Route>
+                  <Route path='/listProduct' component={ListProducts}></Route>
+                  <Route path='/update' component={ProductUpdate}></Route>
               </Switch>
             </Router>
         )

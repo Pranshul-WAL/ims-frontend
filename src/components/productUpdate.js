@@ -12,6 +12,7 @@ class ProductUpdate extends Component {
         this.handleChangeSalePrice=this.handleChangeSalePrice.bind(this);
         this.handleChangeProductDescription=this.handleChangeProductDescription.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
+        this.updateProductHandler=this.updateProductHandler.bind(this)
     }
     handleChangeProductName=(e)=>{
         this.props.getProductname(e.target.value);
