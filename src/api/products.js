@@ -37,4 +37,18 @@ export const updateProduct=(productName,salePrice,productDescription,Quantity, p
     })
 }
 
+export const deleteProduct=(productName,salePrice,productDescription,Quantity, productId)=>{
+    const axios=axiosInstance();
+    return axios({
+        method:'DELETE',
+        url:`/user/admin/product/delete/${productId}`,
+        data:{
+            productName:productName,
+            salePrice:salePrice,
+            productDescription:productDescription,
+            Quantity:Quantity
+        }
+    })
+}
+
 //make response.data static
