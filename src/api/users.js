@@ -21,24 +21,25 @@ export const createNew=(username,password,role)=>{
     })
 }
 
-export const update=(username,password,role)=>{
+export const update=(username,password,role, userId)=>{
     const axios=axiosInstance();
     return axios({
         method:'PUT',
-        url:'/user/admin/enduser/update',
+        url:`/user/admin/enduser/updateUser/${userId}`,
         data:{
-            username:username,
+            userName:username,
             password:password,
-            role:role
+            role:role,
+            //userId
         }
     })
 }
 
-export const deleteUser=(id)=>{
+export const deleteUser=(userId)=>{
     const axios=axiosInstance();
     return axios({
         method:'DELETE',
-        url:`/user/admin/enduser/delete/${id}`,
+        url:`/user/admin/enduser/deleteUser/${userId}`,
         
     })
 }

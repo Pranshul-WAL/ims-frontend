@@ -6,9 +6,10 @@ import UserPage from "./components/userPage";
 import UserCreate from "./container/userCreate";
 import UserList from "./container/userList";
 import ProductPage from "./components/productPage";
-import ProductCreate from './container/productCreate';
-import ListProducts  from "./container/productList";
-import ProductUpdate from "./container/productUpdate";
+import ProductCreate from './components/productCreate'
+import ProductList from "./container/productList";
+import ProductUpdate from './container/productUpdate';
+import UserUpdate from './container/userUpdate';
 
 
 class Main extends React.Component{
@@ -21,14 +22,20 @@ class Main extends React.Component{
                   <Route exact path='/' render={() => {
                       return <Redirect to='/login' />
                   }} />
-                  <Route path ='/admin' component={AdminPage}></Route>
+                   <Route path ='/admin' component={AdminPage}></Route>
                   <Route path ='/enduser' component={UserPage}></Route>
                   <Route path='/add' component={UserCreate}></Route>
                   <Route path='/list' component={UserList}></Route>
                   <Route path='/product' component={ProductPage}></Route>
                   <Route path='/addProduct' component={ProductCreate}></Route>
+<<<<<<< HEAD
                   <Route path='/listProduct' component={ListProducts}></Route>
                   <Route path='/update' component={ProductUpdate}></Route>
+=======
+                  <Route path='/listProduct' component={ProductList}></Route>
+                  <Route path='/updateUser/:userId' component={UserUpdate}></Route>
+                  <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
+>>>>>>> da786f8f493b0af69f9a98011b76f072375ec83c
               </Switch>
             </Router>
         )

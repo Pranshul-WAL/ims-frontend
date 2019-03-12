@@ -1,4 +1,4 @@
-import UserUpdate from '../components/userCreate';
+import UserUpdate from '../components/userUpdate';
 import {connect} from 'react-redux';
 import { update } from '../api/users'
 
@@ -17,12 +17,12 @@ const MapDispatchToProps=(dispatch)=>{
         getUsername:(value)=>dispatch({type:'GET_NAME',payload:value}),
         getPassword:(value)=>dispatch({type:'GET_PASSWORD', payload:value}),
         getRole:(value)=>dispatch({type:'GET_ROLE', payload:value}),
-        updateUser:(username, password, role)=>{
+        updateUser:(username, password, role, userId)=>{
             (async() => {
                 try{
                     dispatch({type:'SET_LOADING', payload:true})
     
-                    await update(username, password, role)
+                    await update(username, password, role, userId)
     
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {

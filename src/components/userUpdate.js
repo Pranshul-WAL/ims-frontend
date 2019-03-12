@@ -8,7 +8,7 @@ class UserUpdate extends Component {
         this.handleChangeUsername=this.handleChangeUsername.bind(this);
         this.handleChangePassword=this.handleChangePassword.bind(this);
         this.handleChangeRole=this.handleChangeRole.bind(this);
-        this.createUserHandler=this.createUserHandler.bind(this);
+        this.updateUserHandler=this.updateUserHandler.bind(this);
     }
 
     handleChangeUsername(e){
@@ -21,7 +21,7 @@ class UserUpdate extends Component {
         this.props.getRole(e.target.value);
     }
     updateUserHandler(){
-        this.props.updateUser(this.props.username, this.props.password, this.props.role)
+        this.props.updateUser(this.props.username, this.props.password, this.props.role, this.props.match.params.userId)
     }
     render() {
         return (

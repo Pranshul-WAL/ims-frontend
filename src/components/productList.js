@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import {Table, Button} from 'reactstrap';
-import {Link } from 'react-router-dom';
+import {Table,Button} from 'reactstrap';
+import {Link} from 'react-router-dom';
+
 class ProductList extends Component {
     constructor(props){
         super(props);
@@ -15,7 +16,7 @@ class ProductList extends Component {
     render() {
         return (
             <div>
-                <Table dark>
+                <Table >
                     <thead>
                         <tr>
                             <th>productName</th>

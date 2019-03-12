@@ -5,7 +5,8 @@ import { login } from '../api/login'
 const mapStateToProps = state => {
     return {
         username: state.login.username,
-        password: state.login.password
+        password: state.login.password,
+        isLogin:state.login.isLogin
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -20,16 +21,17 @@ const mapDispatchToProps = dispatch => {
                 if (loginResponse.data.token !== null && loginResponse.data.token !== undefined) {
                     localStorage.setItem('token', loginResponse.data.token)
                     localStorage.setItem('role', loginResponse.data.user.role)
+                    localStorage.setItem('isLogin','true')
                 } else {
                     alert('Enter valid credentials');
                 }
+                //dispatch({type:'IS_LOGIN'})
                 dispatch({ type: 'CLEAR_FORM' })
 
                 dispatch({ type: 'SET_LOADING', payload: false })
             })()
         }
     }
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
