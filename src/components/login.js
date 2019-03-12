@@ -6,6 +6,8 @@ import {
     // Nav,
     // NavItem,
     Form,FormGroup,Label,Input} from 'reactstrap';
+import AdminPage from './adminPage';
+import { BrowserRouter as Router, Route ,Switch,Redirect} from "react-router-dom";
 
 class Login extends Component{
     constructor(props){
@@ -23,6 +25,14 @@ class Login extends Component{
     }
     loginHandler(username, password) {
         this.props.loginUser(username, password);
+        let isLogin=localStorage.getItem('isLogin');
+        // if(isLogin=='true'){
+        //     <Router>
+        //         <Route path ='/admin' component={AdminPage}></Route>
+        //         <Redirect to='/admin' />
+        //     </Router>
+        // }   
+
         
         
     }
@@ -40,15 +50,10 @@ class Login extends Component{
                     <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="insert password" />
                 </FormGroup>
                 <Button color="success" onClick={() =>{this.loginHandler(this.props.username, this.props.password)}}>Login</Button> 
-                {/* <div align="center">
-                   <span>Username:</span>
-                   <input value="text" onChange={this.handleChangeUsername}></input><br/>
-                   <span>Password:</span>
-                   <input value="text" onChange={this.handleChangePassword}></input><br/>
-                   <Button color="success" onClick={Login}>Login</Button> 
-                </div> */}
-            </Form>    
+                
+            </Form> 
             </div>
+           
         )
     }
 }

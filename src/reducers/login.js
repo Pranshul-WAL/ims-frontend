@@ -1,6 +1,7 @@
 const initialState={
     username:'',
-    password:''
+    password:'',
+    isLoading:false
 }
 
 
@@ -18,6 +19,12 @@ const login=(state=initialState,action)=>{
                 password:action.payload
             }
         }
+        case 'SET_LOADING':{
+            return{
+                ...state,
+                isLoading:action.payload
+            }
+        }    
         case 'CLEAR_FORM':{
             return initialState
         }

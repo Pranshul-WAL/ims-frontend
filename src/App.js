@@ -7,6 +7,9 @@ import UserCreate from "./container/userCreate";
 import UserList from "./container/userList";
 import ProductPage from "./components/productPage";
 import ProductCreate from './components/productCreate'
+import ProductList from "./container/productList";
+import ProductUpdate from './container/productUpdate';
+import UserUpdate from './container/userUpdate';
 
 
 class Main extends React.Component{
@@ -19,12 +22,15 @@ class Main extends React.Component{
                   <Route exact path='/' render={() => {
                       return <Redirect to='/login' />
                   }} />
-                  <Route path ='/admin' component={AdminPage}></Route>
+                   <Route path ='/admin' component={AdminPage}></Route>
                   <Route path ='/enduser' component={UserPage}></Route>
                   <Route path='/add' component={UserCreate}></Route>
                   <Route path='/list' component={UserList}></Route>
                   <Route path='/product' component={ProductPage}></Route>
                   <Route path='/addProduct' component={ProductCreate}></Route>
+                  <Route path='/listProduct' component={ProductList}></Route>
+                  <Route path='/updateUser/:userId' component={UserUpdate}></Route>
+                  <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
               </Switch>
             </Router>
         )

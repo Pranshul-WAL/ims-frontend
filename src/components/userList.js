@@ -7,8 +7,8 @@ class UserList extends Component{
         super(props);
         this.deleteHandler=this.deleteHandler.bind(this);
     };
-    deleteHandler(id){
-        this.props.deleteUser(id);
+    deleteHandler(){
+        this.props.deleteUser(this.props.match.params.userId);
     }
     componentDidMount(){
         
