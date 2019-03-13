@@ -31,6 +31,9 @@ const MapDispatchToProps=(dispatch)=>{
 
                 await deleteUser(userId)
                 dispatch({type:'DELETE_USER', payload:userId})
+                let response = await listUser()
+
+                dispatch({type: 'SET_USER_DETAILS', payload: response.data.users})
 
                 dispatch({type:'SET_LOADING', payload: false})
             })()

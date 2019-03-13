@@ -13,13 +13,6 @@ const userReducer=(state=initialState,action)=>{
             ...state,
             userDetails:action.payload,
         }
-        case 'DELETE_USER':return{
-            ...state,
-            userDetails:{
-                ...state.userDetails,
-                
-            }
-        }
         default: return state;
     }
 }

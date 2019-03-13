@@ -31,3 +31,21 @@
     transform: rotate(360deg);
   }
 }
+.row {
+  background-color: rgb(102, 163, 135);
+}
+.Login {
+  padding: 10px solid black;
+  /* text-align: left; */
+  margin: 25px 50px 75px 100px;
+  background: rgb(102, 163, 135);
+  border: 2px solid black;
+
+}
+
+.col-sm-8 {
+  background-color: rgb(102, 163, 135);
+}
+.Login-main{
+  max-width: 400px;
+}

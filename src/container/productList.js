@@ -22,10 +22,11 @@ const MapDispatchToProps=(dispatch)=>{
         deleteProduct:(productId)=>{
             (async() => {
                 dispatch({type:'SET_LOADING', payload: true})
-
                 await deleteProduct(productId)
-
+                let response= await listProducts();
+                dispatch({type:'SET_PRODUCT_DETAILS', payload:response.data.products});
                 dispatch({type:'SET_LOADING', payload: false})
+            
             })()
         }
     }
