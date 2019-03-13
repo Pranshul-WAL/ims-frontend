@@ -37,15 +37,15 @@ class Login extends Component{
             <h1>Login</h1><hr/>
             <Form>
                 <FormGroup>
-                    <Label for="name">Username:</Label>
+                   
                     <Input  value={this.props.username} onChange={this.handleChangeUsername} type="text" name="username" id="name" placeholder="Enter the Username" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="Password">Password:</Label>
+                    
                     <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="Enter the password" />
                 </FormGroup>
                 <Button color="success" onClick={() =>{this.loginHandler(this.props.username, this.props.password)}}>Login</Button> 
-                <Button color="danger" onClick={this.logoutHandler}>Logout</Button>
+                
             </Form>
             {localStorage.getItem('isLogout') ? <Redirect to='/login' /> : null}            
             {localStorage.getItem('isLogin') ? <Redirect to='/admin' /> : null}

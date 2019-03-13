@@ -40,15 +40,15 @@ class UserCreate extends Component {
                 <FormGroup>
 
                 <Label check>
-                    <Input type="radio" name="radio1" />{' '}
+                    <Input type="radio" name="radio1" value="Admin" onChange={this.handleChangeRole} />{' '}
                     Admin
                 </Label><br/>
                 <Label check>
-                    <Input type="radio" name="radio1" />{' '}
+                    <Input type="radio" name="radio1" value="Operator" onChange={this.handleChangeRole}/>{' '}
                     Operator
                 </Label><br/>
                 <Label check>
-                    <Input type="radio" name="radio1" />{' '}
+                    <Input type="radio" name="radio1" value="Stockist" onChange={this.handleChangeRole}/>{' '}
                     Stockist
                 </Label><br/>
                 {/* <Button onClick={()=>

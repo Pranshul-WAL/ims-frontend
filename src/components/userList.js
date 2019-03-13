@@ -8,8 +8,8 @@ class UserList extends Component{
         super(props);
         this.deleteHandler=this.deleteHandler.bind(this);
     };
-    deleteHandler(){
-        this.props.deleteUser(this.props.match.params.userId);
+    deleteHandler(userId){
+        this.props.deleteUser(userId);
     }
     componentDidMount(){
         
@@ -39,11 +39,14 @@ class UserList extends Component{
                             
                                 {this.props.userDetails.map((userDetails)=>{
                                     return(
-                                        <tr>
+                                        <tr className='table-row'>
                                             <td>{userDetails.userName}</td>
                                             <td>{userDetails.password}</td>
                                             <td>{userDetails.role}</td>
-                                            <td><Button onClick={()=>{this.deleteHandler(userDetails.id)}}>Delete</Button></td>
+                                            <td><Button onClick={()=>{
+                                                
+                                                this.deleteHandler(userDetails.id)
+                                                }}>Delete</Button></td>
                                             <td><Link to={`/updateUser/${userDetails.id}`}>Update</Link></td>
                                         </tr>
                                     )

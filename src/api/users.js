@@ -4,7 +4,7 @@ export const listUser = (role) => {
     const axios = axiosInstance();
     return axios({
         method: 'GET',
-        url: '/user/admin/enduser/list/Admin',
+        url: '/user/admin/enduser/listAll',
     })
 }
 
@@ -35,7 +35,7 @@ export const update=(username,password,role, userId)=>{
     })
 }
 
-export const deleteUser=(userId)=>{
+export const delete_User=(userId)=>{
     const axios=axiosInstance();
     return axios({
         method:'DELETE',

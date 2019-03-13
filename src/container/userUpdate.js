@@ -1,6 +1,7 @@
 import UserUpdate from '../components/userUpdate';
 import {connect} from 'react-redux';
-import { update } from '../api/users'
+import { update } from '../api/users';
+import { listUser } from '../api/users';
 
 const MapStateToProps=(state)=>{
     return{
@@ -23,7 +24,7 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await update(username, password, role, userId)
-    
+                    
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {
                     console.log(e)
