@@ -10,6 +10,7 @@ import ProductCreate from './components/productCreate';
 import ProductList from "./container/productList";
 import ProductUpdate from './container/productUpdate';
 import UserUpdate from './container/userUpdate';
+import './App.css';
 
 
 
