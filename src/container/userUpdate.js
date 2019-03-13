@@ -1,7 +1,7 @@
 import UserUpdate from '../components/userUpdate';
 import {connect} from 'react-redux';
 import { update } from '../api/users';
-import { listUser } from '../api/users';
+// import { listUser } from '../api/users';
 
 const MapStateToProps=(state)=>{
     return{
