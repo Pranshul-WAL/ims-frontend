@@ -1,33 +1,50 @@
-import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Button,Nav} from 'reactstrap';
+import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import {
+    Navbar,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+   } from 'reactstrap';
+
 
 class AdminPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.logoutHandler=this.logoutHandler.bind(this)
+        this.logoutHandler = this.logoutHandler.bind(this)
     }
-    logoutHandler(){
+    logoutHandler() {
         //localStorage.clear();
         localStorage.removeItem('isLogin');
     }
     render() {
         return (
             <>
-            <Nav >
-
-            <div align='center' class="nav-item">
-                <h1>Admin Page</h1><hr/>
-                <Link to='/enduser'>Users</Link><br/>
-                <Link to='/product'>Products</Link><br/>
-                <Link to='/login'><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>           
-            </div>
-            </Nav>
-            {
-                this.props.children
-            }
+                <div>
+                    <Navbar color="light" light expand="md">
+                        <NavbarBrand href="/">WAL</NavbarBrand>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/enduser">Users</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/product">Product</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Navbar>
+                </div>
+                {
+                    this.props.children
+                }
+                <img src={'./logo.jpg'} alt="logo" Cladd/>
+                <p>lorem ipsum</p>
             </>
-            
+
         );
     }
 }
