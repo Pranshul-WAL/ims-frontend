@@ -28,7 +28,7 @@ class ProductUpdate extends Component {
         this.props.getQuantity(e.target.value);
     }
     updateProductHandler(){
-        this.props.updateProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)
+        this.props.updateProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity,this.props.match.params.productId)
     }
     
     render() {
@@ -45,6 +45,7 @@ class ProductUpdate extends Component {
                 <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                 <Button onClick={this.updateProductHandler}>Update</Button>
                 {localStorage.getItem('isProductUpdate') ? <Redirect to='/listProduct' /> : null}
+                {localStorage.removeItem('isProductUpdate')}
             </div>
         );
     }
