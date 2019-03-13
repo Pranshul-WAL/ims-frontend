@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Button,Input} from 'reactstrap';
+import {Button,Input,Label,FormGroup} from 'reactstrap';
 
 class UserCreate extends Component {
     constructor(props){
@@ -28,18 +28,33 @@ class UserCreate extends Component {
             <div align="center">
                 <h1>Create New User</h1><hr/>
                 <div>
-                    <label>Username:</label>
+                    <Label>Username:</Label>
                     <Input type="text"  value={this.props.username} onChange={this.handleChangeUsername} placeholder="Enter Username"></Input><br/>
                 </div>
                 <div>
-                    <label>Password:</label>
+                    <Label>Password:</Label>
                     <Input type="password"  value={this.props.password} onChange={this.handleChangePassword} placeholder="Enter password"></Input><br/>
                 </div>
-                <label>Role:</label>
-                <Input type="text"  value={this.props.role} onChange={this.handleChangeRole} placeholder="Enter role"></Input><br/>
+                <Label>Role:</Label><br/>
+                {/* <Input type="text"  value={this.props.role} onChange={this.handleChangeRole} placeholder="Enter role"></Input><br/> */}
+                <FormGroup>
+
+                <Label check>
+                    <Input type="radio" name="radio1" />{' '}
+                    Admin
+                </Label><br/>
+                <Label check>
+                    <Input type="radio" name="radio1" />{' '}
+                    Operator
+                </Label><br/>
+                <Label check>
+                    <Input type="radio" name="radio1" />{' '}
+                    Stockist
+                </Label><br/>
                 {/* <Button onClick={()=>
                     { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
                 <Button onClick={this.createUserHandler}>Create</Button>    
+                </FormGroup>
             </div>
         );
     }

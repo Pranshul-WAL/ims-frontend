@@ -7,7 +7,7 @@ class ProductList extends Component {
         super(props);
         this.deleteHandler=this.deleteHandler.bind(this);
     };
-    deleteHandler(id){
+    deleteHandler(){
         this.props.deleteProduct(this.props.match.params.productId);
     }
     componentDidMount(){
