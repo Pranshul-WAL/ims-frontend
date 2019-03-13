@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import {Table,Button} from 'reactstrap';
+import {Table} from 'reactstrap';
+import {Button} from 'reactstrap';
 import {Link} from 'react-router-dom'
 
 class UserList extends Component{
@@ -22,7 +23,7 @@ class UserList extends Component{
     render(){
         return(
             <div>
-                <Table dark>
+                <Table dark hover>
                     <thead>
                         <tr>
                             <th>Username</th>
