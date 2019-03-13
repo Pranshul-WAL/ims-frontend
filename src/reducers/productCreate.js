@@ -38,6 +38,9 @@ const product=(state=initialState,action)=>{
                 isLoading:action.payload
             }
         }
+        case 'CLEAR_FORM':{
+            return initialState
+        }
         
         default: return state   
     }

@@ -23,7 +23,8 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await createNew(username, password, role)
-    
+                    localStorage.setItem('isUserCreate',true)
+                    dispatch({ type: 'CLEAR_FORM' })
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {
                     console.log(e)

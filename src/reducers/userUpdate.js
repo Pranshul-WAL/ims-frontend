@@ -31,23 +31,10 @@ const userUpdate=(state=initialState,action)=>{
                 isLoading:action.payload
             }
         }
-        // case 'CREATE_USER':{
-        //     return{
-        //         ...state,
-        //         user:[
-        //             ...state.user,
-        //             {
-        //                 username:state.username,
-        //                 password:state.password,
-        //                 role:state.role
-        //             }
-        //         ],
-        //         username:'',
-        //         password:'',
-        //         role:''
-
-        //     }
-        //} 
+        case 'CLEAR_FORM':{
+            return initialState
+        }
+        
         default: return state   
     }
 }

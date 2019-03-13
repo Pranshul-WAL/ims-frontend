@@ -24,6 +24,8 @@ const MapDispatchToProps = (dispatch) => {
                     dispatch({ type: 'SET_LOADING', payload: true })
 
                     await createProduct(productName, salePrice, productDescription, Quantity)
+                    localStorage.setItem('isProductCreate',true)
+                    dispatch({ type: 'CLEAR_FORM' })
 
                     dispatch({ type: 'SET_LOADING', payload: false })
                 } catch (e) {

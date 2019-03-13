@@ -31,6 +31,9 @@ const user=(state=initialState,action)=>{
                 isLoading:action.payload
             }
         }
+        case 'CLEAR_FORM':{
+            return initialState
+        }
         // case 'CREATE_USER':{
         //     return{
         //         ...state,

@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
+import React,{Component, } from 'react';
 import {Button,Input,Label,FormGroup} from 'reactstrap';
-
+import {Redirect} from "react-router-dom";
 class UserCreate extends Component {
     constructor(props){
         super(props);
@@ -55,6 +55,8 @@ class UserCreate extends Component {
                     { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
                 <Button onClick={this.createUserHandler}>Create</Button>    
                 </FormGroup>
+                {localStorage.getItem('isUserCreate') ? <Redirect to='/list' /> : null}
+                {localStorage.removeItem('isUserCreate')}
             </div>
         );
     }

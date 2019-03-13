@@ -8,7 +8,7 @@ class ProductList extends Component {
         this.deleteHandler=this.deleteHandler.bind(this);
     };
     deleteHandler(productId){
-        this.props.deleteHandler(productId);
+        this.props.deleteProduct(productId);
     }
     componentDidMount(){
         this.props.fetchProducts();
