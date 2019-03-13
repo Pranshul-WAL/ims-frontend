@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => {
                 if (loginResponse.data.token !== null && loginResponse.data.token !== undefined) {
                     localStorage.setItem('token', loginResponse.data.token)
                     localStorage.setItem('role', loginResponse.data.user.role)
-                    localStorage.setItem('isLogin','true')
+                    localStorage.setItem('isLogin',true)
                 } else {
                     alert('Enter valid credentials');
                 }

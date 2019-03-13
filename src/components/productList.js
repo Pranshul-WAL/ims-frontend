@@ -7,8 +7,8 @@ class ProductList extends Component {
         super(props);
         this.deleteHandler=this.deleteHandler.bind(this);
     };
-    deleteHandler(id){
-        this.props.deleteProduct(id);
+    deleteHandler(){
+        this.props.deleteProduct(this.props.match.params.productId);
     }
     componentDidMount(){
         this.props.fetchProducts();
@@ -35,7 +35,7 @@ class ProductList extends Component {
                                         <td>{productDetails.productDescription}</td>
                                         <td>{productDetails.Quantity}</td>
                                         <td><Button onClick={()=>{this.deleteHandler(productDetails.id)}}>Delete</Button></td>
-                                        <td><Link to={`/update/${productDetails.id}`}>Update</Link></td>
+                                        <td><Link to={`/updateProduct/${productDetails.id}`}>Update</Link></td>
                                     </tr>
                         )})
                     }

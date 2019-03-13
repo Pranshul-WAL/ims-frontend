@@ -24,16 +24,11 @@ class Login extends Component{
         this.props.getPassword(e.target.value)
     }
     loginHandler(username, password) {
-        this.props.loginUser(username, password);
-        let isLogin=localStorage.getItem('isLogin');
-        // if(isLogin=='true'){
-        //     <Router>
-        //         <Route path ='/admin' component={AdminPage}></Route>
-        //         <Redirect to='/admin' />
-        //     </Router>
-        // }   
-
-        
+        this.props.loginUser(username, password);    
+    }
+    logoutHandler(){
+        localStorage.setItem('isLogout',true);
+        //localStorage.clear();
         
     }
     render(){
@@ -46,12 +41,14 @@ class Login extends Component{
                     <Input  value={this.props.username} onChange={this.handleChangeUsername} type="text" name="username" id="name" placeholder="Enter the Username" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="Password">Password</Label>
-                    <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="insert password" />
+                    <Label for="Password">Password:</Label>
+                    <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="Enter the password" />
                 </FormGroup>
                 <Button color="success" onClick={() =>{this.loginHandler(this.props.username, this.props.password)}}>Login</Button> 
-                
-            </Form> 
+                <Button color="danger" onClick={this.logoutHandler}>Logout</Button>
+            </Form>
+            {localStorage.getItem('isLogout') ? <Redirect to='/login' /> : null}            
+            {localStorage.getItem('isLogin') ? <Redirect to='/admin' /> : null}
             </div>
            
         )

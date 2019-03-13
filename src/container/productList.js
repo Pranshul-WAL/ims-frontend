@@ -1,6 +1,6 @@
 import ProductList from '../components/productList';
 import {connect} from 'react-redux';
-import {listProducts} from '../api/products'
+import {listProducts,deleteProduct} from '../api/products'
 
 const MapStateToPrpos=(state)=>{
     return{
@@ -17,6 +17,15 @@ const MapDispatchToProps=(dispatch)=>{
                 let response= await listProducts();
                 dispatch({type:'SET_PRODUCT_DETAILS', payload:response.data.products});
                 dispatch({type:'SET_LOADING',payload:false});
+            })()
+        },
+        deleteProduct:(productId)=>{
+            (async() => {
+                dispatch({type:'SET_LOADING', payload: true})
+
+                await deleteProduct(productId)
+
+                dispatch({type:'SET_LOADING', payload: false})
             })()
         }
     }
