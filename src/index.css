@@ -6,8 +6,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(102, 163, 135) !important;
+  background-color: rgb(60, 72, 185) !important;
 }
+/* 69, 82, 201 */
+/* 60, 72, 185 */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -19,6 +21,7 @@ code {
   padding: 10px ;
   /* text-align: left; */
   margin: 25px 50px 25px 50px;
+  color:white;
   /* border: 2px solid black; */
 
 }
@@ -26,6 +29,7 @@ code {
 .Login-main{
   max-width: 400px;
   margin: 100px auto 0;
+  color:white;
 }
 
 .navbar.bg-dark {

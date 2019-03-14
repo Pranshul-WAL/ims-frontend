@@ -27,7 +27,10 @@ class ProductCreate extends Component {
         this.props.getQuantity(e.target.value);
     }
     createProductHandler(){
-        this.props.createProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)
+        if(this.props.productName===""||this.props.salePrice===""||this.props.productDescription===""||this.props.Quantity===""){
+            alert('Enter Valid Credentials');
+        }else{
+        this.props.createProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)}
     }
     
     render() {
@@ -39,11 +42,11 @@ class ProductCreate extends Component {
                     <label className="d-block text-left">Product Name:</label>
                     <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
                     <label>Sales Price:</label>
-                    <Input type="text"  value={this.props.salePrice} onChange={this.handleChangeSalePrice} placeholder="Enter Sales Price"></Input>
+                    <Input type="number"  value={this.props.salePrice} onChange={this.handleChangeSalePrice} placeholder="Enter Sales Price"></Input>
                     <label>Product Description:</label>
                     <Input type="text"  value={this.props.productDescription} onChange={this.handleChangeProductDescription} placeholder="Enter description"></Input>
                     <label>Quantity:</label>
-                    <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
+                    <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                     <Button onClick={this.createProductHandler}>Create</Button>
                     {localStorage.getItem('isProductCreate') ? <Redirect to='/listProduct' /> : null}
                     {localStorage.removeItem('isProductCreate')}

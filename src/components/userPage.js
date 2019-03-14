@@ -5,10 +5,10 @@ class UserPage extends Component {
    
     render() {
         return (
-            <div align='center'>
-                <h1>User Page</h1><hr/>
-                <Link to='/add'>Add Users</Link><br/>
-                <Link to='/list'>List Users</Link>
+            <div align='center' >
+                <h1 className="user-class">User Page</h1><hr/>
+                <Link to='/add' className="user-class">Add Users</Link><br/>
+                <Link to='/list' className="user-class">List Users</Link>
                 
             </div>
             
