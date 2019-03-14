@@ -4,10 +4,17 @@ import { Button } from 'reactstrap';
 import logo from '../logo.jpg'
 
 import {
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
+    Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
    } from 'reactstrap';
 
 
@@ -15,29 +22,74 @@ class AdminPage extends Component {
     constructor(props) {
         super(props);
         this.logoutHandler = this.logoutHandler.bind(this)
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false,
+        };
     }
     logoutHandler() {
         //localStorage.clear();
         localStorage.removeItem('isLogin');
     }
+    toggle() {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+    }
     render() {
         return (
             <>
                 <div>
-                    <Navbar color="dark" light expand="md" >
-                        <NavbarBrand href="/" color="white">WEST AGILE LABS</NavbarBrand>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem className="Font-Color">
-                                <Link className="nav-link" to="/enduser">Users</Link>
-                            </NavItem>
-                            <NavItem className="Font-Color">
-                                <Link className="nav-link" to="/product">Product</Link>
-                            </NavItem>
-                            <NavItem className="Font-Color">
-                                <Link className="nav-link" to="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
-                            </NavItem>
-                        </Nav>
-                    </Navbar>
+                <Navbar color="dark" light expand="md">
+                    <NavbarBrand href="/" >WEST AGILE LABS</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                    <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                    Users
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                    <DropdownItem>
+                    <Link to="/list">List Users</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/add">Add User</Link>
+                  </DropdownItem>
+                  </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                    Products
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                    <DropdownItem>
+                    <Link to="/listProduct">List Products</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/addProduct">Add Product</Link>
+                  </DropdownItem>
+                  </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                    Orders
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                    <DropdownItem>
+                    <Link to="/listOrder">List Orders</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/addOrder">Add Order</Link>
+                  </DropdownItem>
+                  </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <NavItem>
+                    <Link className="nav-link" to="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
+                    </NavItem>
+                    </Nav>
+                    </Collapse>
+                </Navbar>
                 </div>
                 {
                     this.props.children? this.props.children:<div>
