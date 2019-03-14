@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
-
+import AdminPage from './adminPage';
 
 
 class ProductCreate extends Component {
@@ -32,20 +32,24 @@ class ProductCreate extends Component {
     
     render() {
         return (
-            <div align="center">
-                <h1>Create New Product</h1><hr/>
-                <label>Product Name:</label>
-                <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
-                <label>Sales Price:</label>
-                <Input type="text"  value={this.props.salePrice} onChange={this.handleChangeSalePrice} placeholder="Enter Sales Price"></Input>
-                <label>Product Description:</label>
-                <Input type="text"  value={this.props.productDescription} onChange={this.handleChangeProductDescription} placeholder="Enter description"></Input>
-                <label>Quantity:</label>
-                <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
-                <Button onClick={this.createProductHandler}>Create</Button>
-                {localStorage.getItem('isProductCreate') ? <Redirect to='/listProduct' /> : null}
-                {localStorage.removeItem('isProductCreate')}
+            <AdminPage>
+            <div className="Login-main">
+                <div className="Login-new">
+                    <h1>Create New Product</h1><hr/> 
+                    <label className="d-block text-left">Product Name:</label>
+                    <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
+                    <label>Sales Price:</label>
+                    <Input type="text"  value={this.props.salePrice} onChange={this.handleChangeSalePrice} placeholder="Enter Sales Price"></Input>
+                    <label>Product Description:</label>
+                    <Input type="text"  value={this.props.productDescription} onChange={this.handleChangeProductDescription} placeholder="Enter description"></Input>
+                    <label>Quantity:</label>
+                    <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
+                    <Button onClick={this.createProductHandler}>Create</Button>
+                    {localStorage.getItem('isProductCreate') ? <Redirect to='/listProduct' /> : null}
+                    {localStorage.removeItem('isProductCreate')}
+                </div>
             </div>
+            </AdminPage>
         );
     }
 }

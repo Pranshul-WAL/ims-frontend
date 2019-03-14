@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Table,Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
-
+import AdminPage from './adminPage';
 class ProductList extends Component {
     constructor(props){
         super(props);
@@ -15,7 +15,11 @@ class ProductList extends Component {
     }
     render() {
         return (
-            <div>
+            <AdminPage>
+            <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
                 <Table >
                     <thead>
                         <tr>
@@ -42,7 +46,9 @@ class ProductList extends Component {
                     </tbody>
 
                 </Table>
+                </div>
             </div>
+            </AdminPage>
         );
     }
 }
