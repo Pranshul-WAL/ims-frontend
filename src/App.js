@@ -6,7 +6,7 @@ import UserPage from "./components/userPage";
 import UserCreate from "./container/userCreate";
 import UserList from "./container/userList";
 import ProductPage from "./components/productPage";
-import ProductCreate from './components/productCreate';
+import ProductCreate from './container/productCreate';
 import ProductList from "./container/productList";
 import ProductUpdate from './container/productUpdate';
 import UserUpdate from './container/userUpdate';
