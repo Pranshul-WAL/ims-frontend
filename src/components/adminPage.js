@@ -23,10 +23,10 @@ class AdminPage extends Component {
         return (
             <>
                 <div>
-                    <Navbar color="light" light expand="md">
-                        <NavbarBrand href="/">WAL</NavbarBrand>
+                    <Navbar color="dark" light expand="md">
+                        <NavbarBrand href="https://www.westagilelabs.com" >WAL</NavbarBrand>
                         <Nav className="ml-auto" navbar>
-                            <NavItem>
+                            <NavItem className="Color">
                                 <NavLink href="/enduser">Users</NavLink>
                             </NavItem>
                             <NavItem>
