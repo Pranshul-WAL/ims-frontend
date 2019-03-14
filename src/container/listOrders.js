@@ -1,7 +1,7 @@
-import listOrders from '../components/listOrders';
-import {connect} from 'react-redux';
+import ListOrders from '../components/listOrders';
+import { connect } from 'react-redux';
 
-import {listOrder} from '../api/listOrders';
+import { fetchOrders } from '../api/listOrders';
 
 
 const MapStateToProps = (state) => {
@@ -11,17 +11,26 @@ const MapStateToProps = (state) => {
     }
 }
 
-const  MapDispatchToProps = (dispatch) => {
+const MapDispatchToProps = (dispatch) => {
     return {
-        fetchOrders : () => {
-           (async() => {
-               dispatch({type:'ISLOADING', payload: true });
-               let response = await listOrder();
-               dispatch({type:'LISTORDERS', payload: response.data});
-               dispatch({type:'ISLOADING', payload: false});
+        fetchOrders:() => {
+            (async () => {
+                dispatch({
+                    type: 'ISLOADING',
+                    payload: true
+                });
+                let response = await fetchOrders();
+                dispatch({
+                    type: 'LISTORDERS',
+                    payload: response.data.allOrders
+                });
+                dispatch({
+                    type: 'ISLOADING',
+                    payload: false
+                });
             })()
         }
     }
 }
 
-export default connect(MapStateToProps, MapDispatchToProps)(listOrders);
+export default connect(MapStateToProps, MapDispatchToProps)(ListOrders);

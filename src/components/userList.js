@@ -10,7 +10,11 @@ class UserList extends Component {
         this.deleteHandler = this.deleteHandler.bind(this);
     };
     deleteHandler(userId){
+        if (userId === 1) {
+            alert('System administrator cannot be deleted')
+        } else {
         this.props.deleteUser(userId);
+        }
     }
     componentDidMount() {
 
@@ -24,6 +28,8 @@ class UserList extends Component {
     render() {
         return (
             <AdminPage>
+            <br></br>
+            <h1 className="user-style"> Users</h1>
                 <div class="row">
                     <div class="col-sm-2">
                     </div>
@@ -32,7 +38,6 @@ class UserList extends Component {
                             <thead>
                                 <tr>
                                     <th>Username</th>
-                                    <th>Password</th>
                                     <th>Role</th>
                                     <th>Delete</th>
                                     <th>Update</th>
@@ -43,7 +48,6 @@ class UserList extends Component {
                                     return (
                                         <tr>
                                             <td>{userDetails.userName}</td>
-                                            <td>{userDetails.password}</td>
                                             <td>{userDetails.role}</td>
                                             <td><Button onClick={() => { 
                                                 this.deleteHandler(userDetails.id) }}>Delete</Button></td>
