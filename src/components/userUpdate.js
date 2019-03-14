@@ -23,7 +23,11 @@ class UserUpdate extends Component {
         this.props.getRole(e.target.value);
     }
     updateUserHandler() {
+        if (this.props.username ==="" || this.props.password ==="" || this.props.role ==="") {
+            alert('Enter valid credentials.');
+        } else {
         this.props.updateUser(this.props.username, this.props.password, this.props.role, this.props.match.params.userId);
+        }
         // return  ( <Redirect to='/list' />);
     }
     // componentWillUnmount() {
@@ -32,8 +36,8 @@ class UserUpdate extends Component {
     // }
     render() {
         return (
-            <div>
-            <div align="center">
+            <div class="Login-main">
+            <div align="center" class="Login-new Login">
                 <h1>Update User</h1><hr />
                 <div>
                     <label>Username:</label>

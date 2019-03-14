@@ -16,17 +16,20 @@ class ProductList extends Component {
     render() {
         return (
             <AdminPage>
+            <br></br>
             <div class="row">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-8">
-                <Table >
+                <Table hover  className="table-padding">
                     <thead>
                         <tr>
-                            <th>productName</th>
-                            <th>salePrice</th>
-                            <th>productDescription</th>
+                            <th>Product Name</th>
+                            <th>Sale Price</th>
+                            <th>Product Description</th>
                             <th>Quantity</th>
+                            <th>Delete</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -33,3 +33,7 @@ code {
 .navbar.bg-dark {
   background-color: rgba(0,0,0,0.4) !important;
 } 
+
+.user-style {
+  text-align: center;
+}

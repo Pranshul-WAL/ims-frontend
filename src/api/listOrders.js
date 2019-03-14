@@ -1,6 +1,6 @@
 import axiosInstance from './';
 
-export const listOrders = () => {
+export const fetchOrders = () => {
     const axios = axiosInstance();
     return axios({
         method: 'GET',

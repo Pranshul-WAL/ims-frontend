@@ -10,6 +10,8 @@ import ProductCreate from './container/productCreate';
 import ProductList from "./container/productList";
 import ProductUpdate from './container/productUpdate';
 import UserUpdate from './container/userUpdate';
+// import listOrders from './container/listOrders';
+import ListOrders from './container/listOrders';
 import './App.css';
 
 
@@ -33,6 +35,7 @@ class Main extends React.Component{
                   <Route path='/listProduct' component={ProductList}></Route>
                   <Route path='/updateUser/:userId' component={UserUpdate}></Route>
                   <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
+                  <Route path='/listOrder' component = {ListOrders}></Route>
               </Switch>
             </Router>
         )
