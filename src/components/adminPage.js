@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+
 import {
     Navbar,
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
    } from 'reactstrap';
 
 
@@ -23,26 +23,24 @@ class AdminPage extends Component {
         return (
             <>
                 <div>
-                    <Navbar color="light" light expand="md">
-                        <NavbarBrand href="/">WAL</NavbarBrand>
+                    <Navbar color="dark" light expand="md" >
+                        <NavbarBrand href="https://www.westagilelabs.com" color="white">WAL</NavbarBrand>
                         <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/enduser">Users</NavLink>
+                            <NavItem className="Font-Color">
+                                <Link className="nav-link" to="/enduser">Users</Link>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="/product">Product</NavLink>
+                            <NavItem className="Font-Color">
+                                <Link className="nav-link" to="/product">Product</Link>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></NavLink>
+                            <NavItem className="Font-Color">
+                                <Link className="nav-link" to="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
                             </NavItem>
                         </Nav>
                     </Navbar>
                 </div>
                 {
-                    this.props.children
+                    this.props.children? this.props.children:<h1>Hello</h1>
                 }
-                <img src={'./logo.jpg'} alt="logo" Cladd/>
-                <p>lorem ipsum</p>
             </>
 
         );

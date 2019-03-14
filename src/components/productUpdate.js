@@ -2,8 +2,7 @@ import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
 
-
-
+import AdminPage from './adminPage';
 
 class ProductUpdate extends Component {
     constructor(props){
@@ -33,7 +32,9 @@ class ProductUpdate extends Component {
     
     render() {
         return (
-            <div align="center">
+            <AdminPage>
+            <div className="Login-main">
+            <div className="Login-new">
                 <h1>Update Product</h1><hr/>
                 <label>Product Name:</label>
                 <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
@@ -47,6 +48,8 @@ class ProductUpdate extends Component {
                 {localStorage.getItem('isProductUpdate') ? <Redirect to='/listProduct' /> : null}
                 {localStorage.removeItem('isProductUpdate')}
             </div>
+            </div>
+            </AdminPage>
         );
     }
 }

@@ -52,4 +52,21 @@
 }
 .Login-main{
   max-width: 400px;
+
 }
+
+.Font-Color{
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: #fff !important;
+}
+
+.navbar-light .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar .bg-dark {
+  background-color: rgba(0,0,0,0.3) !important;
+} 

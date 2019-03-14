@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 //import {createNew} from '../api/users';
 import {axiosInstance} from '../api/index';
+import AdminPage from './adminPage';
 
 
 class OrderCreate extends Component {
@@ -39,6 +40,7 @@ class OrderCreate extends Component {
     // }
     render() {
         return (
+            <AdminPage>
             <div align="center">
                 <h1>Create New Order</h1><hr/>
                 <label>Product Name:</label>
@@ -49,6 +51,7 @@ class OrderCreate extends Component {
                 <Input type="text"  value={this.props.input} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                 <Button onClick={createOrder()}>Create</Button>
             </div>
+            </AdminPage>
         );
     }
 }

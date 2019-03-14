@@ -27,3 +27,7 @@ code {
   max-width: 400px;
   margin: 100px auto 0;
 }
+
+.navbar.bg-dark {
+  background-color: rgba(0,0,0,0.4) !important;
+} 
