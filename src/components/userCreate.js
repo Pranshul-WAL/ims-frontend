@@ -22,7 +22,11 @@ class UserCreate extends Component {
         this.props.getRole(e.target.value);
     }
     createUserHandler(){
+        if (this.props.username ==="" || this.props.password === "" || this.props.role === "") {
+            alert('Enter valid credentials.')
+        } else {
         this.props.createUser(this.props.username, this.props.password, this.props.role)
+        }
     }
     render() {
         return (
@@ -41,25 +45,28 @@ class UserCreate extends Component {
                 <Label>Role:</Label><br/>
                 {/* <Input type="text"  value={this.props.role} onChange={this.handleChangeRole} placeholder="Enter role"></Input><br/> */}
                 <FormGroup>
-                <Label check>
-                    <Input type="radio" name="radio1" value="Admin" onChange={this.handleChangeRole} />{' '}
-                    Admin
-                </Label>&emsp;
-                &emsp;
-                <Label check>
-                    <Input type="radio" name="radio1" value="Operator" onChange={this.handleChangeRole}/>{' '}
-                    Operator
-                </Label>&emsp;
-                &emsp;
-                <Label check>
-                    <Input type="radio" name="radio1" value="Stockist" onChange={this.handleChangeRole}/>{' '}
-                    Stockist
-                </Label><br></br>
-                &emsp;
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <div className="radio-buttons-row">
+                        <Label check>
+                            <Input type="radio" name="radio1" value="Admin" onChange={this.handleChangeRole} />{' '}
+                            Admin
+                        </Label>&emsp;
+                        &emsp;
+                        <Label check>
+                            <Input type="radio" name="radio1" value="Operator" onChange={this.handleChangeRole}/>{' '}
+                            Operator
+                        </Label>&emsp;
+                        &emsp;
+                        <Label check>
+                            <Input type="radio" name="radio1" value="Stockist" onChange={this.handleChangeRole}/>{' '}
+                            Stockist
+                        </Label>
+                    </div>
+
                 {/* <Button onClick={()=>
                     { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
-                <Button onClick={this.createUserHandler}>Create</Button>    
+                    <div className="button-row">
+                        <Button onClick={this.createUserHandler}>Create</Button>
+                    </div>
                 </FormGroup>
                 {localStorage.getItem('isUserCreate') ? <Redirect to='/list' /> : null}
                 {localStorage.removeItem('isUserCreate')}

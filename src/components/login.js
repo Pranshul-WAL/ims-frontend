@@ -5,6 +5,7 @@ import {
     // NavbarToggler,
     // Nav,
     // NavItem,
+    Label,
     Form,FormGroup, Input} from 'reactstrap';
 // import AdminPage from './adminPage';
 import {Redirect} from "react-router-dom";
@@ -35,12 +36,14 @@ class Login extends Component{
         return(
             <div className="container my-0 mx-auto">
                 <div className="Login-main">
-                    <div className="Login">
+                    <div className="Login Login-new">
                         <h1>Login</h1>
                         <Form className="">
+                            <Label>Username:</Label>
                             <FormGroup>
                                 <Input  value={this.props.username} onChange={this.handleChangeUsername} type="text" name="username" id="name" placeholder="Enter the Username" />
                             </FormGroup>
+                            <Label>Password:</Label>
                             <FormGroup>
                                 <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="Enter the password" />
                             </FormGroup>

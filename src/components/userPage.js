@@ -6,9 +6,9 @@ class UserPage extends Component {
     render() {
         return (
             <div align='center'>
-                <h1>User Page</h1><hr/>
-                <Link to='/add'>Add Users</Link><br/>
-                <Link to='/list'>List Users</Link>
+                <h1 className="UserStyle">User Page</h1><hr/>
+                <Link to='/add' className="UserStyle">Add Users</Link><br/>
+                <Link to='/list' lassName="UserStyle">List Users</Link>
                 
             </div>
             

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-
+import AdminPage from './adminPage';
 class ListReturn extends Component {
     componentDidMount() {
         this.props.fetchReturns()
     }
     render() {
         return (
+            <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
             <Table hover>
                 <thead>
                     <tr>
@@ -31,6 +34,8 @@ class ListReturn extends Component {
                 })}
                 </tbody>
             </Table>
+            </div>
+            </div>
         );
     }
 }
