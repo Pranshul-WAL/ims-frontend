@@ -35,7 +35,8 @@ class OrderCreate extends Component {
     render() {
         return (
             <AdminPage>
-            <div align="center">
+            <div className="Login-main">
+            <div className="Login-new">
                 <h1>Create New Order</h1><hr/>
                 <label>Product Name:</label>
                 <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
@@ -44,6 +45,7 @@ class OrderCreate extends Component {
                 <label>Quantity:</label>
                 <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                 <Button onClick={this.handleChangeCreate}>Create</Button>
+            </div>
             </div>
             {localStorage.getItem('isOrder') ? <Redirect to='/listOrder' /> : null}
             {localStorage.removeItem('isOrder')}

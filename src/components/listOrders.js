@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import moment from 'moment'
-// import AdminPage from './adminPage';
+import AdminPage from './adminPage';
 class ListOrders extends Component {
     componentDidMount() {
         this.props.fetchOrders()
@@ -9,6 +9,9 @@ class ListOrders extends Component {
 
     render() {
         return (
+            <AdminPage>
+            <br></br>
+            <h1 className="UserStyle user-style"> Orders</h1>
             <div className="row">
             <div className ="col-sm-2"></div>
             <div className="col-sm-8">
@@ -41,6 +44,7 @@ class ListOrders extends Component {
             </Table>
             </div>
             </div>
+            </AdminPage>
         );
     }
 }

@@ -17,6 +17,7 @@ class ProductList extends Component {
         return (
             <AdminPage>
             <br></br>
+            <h1 className="UserStyle user-style"> Products</h1>
             <div class="row">
             <div class="col-sm-2">
             </div>

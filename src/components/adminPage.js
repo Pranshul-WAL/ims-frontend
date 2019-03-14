@@ -41,7 +41,9 @@ class AdminPage extends Component {
             <>
                 <div>
                 <Navbar color="dark" light expand="md">
-                    <NavbarBrand href="/" >WEST AGILE LABS</NavbarBrand>
+                    <NavbarBrand  >
+                    <Link to="/" className="UserStyle">WEST AGILE LABS</Link>
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
@@ -51,10 +53,11 @@ class AdminPage extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                     <DropdownItem>
-                    <Link to="/list">List Users</Link>
+                    <Link to="/list">LIST USERS</Link>
                   </DropdownItem>
+                  <DropdownItem divider />
                   <DropdownItem>
-                    <Link to="/add">Add User</Link>
+                    <Link to="/add">ADD USERS</Link>
                   </DropdownItem>
                   </DropdownMenu>
                     </UncontrolledDropdown>
@@ -64,21 +67,23 @@ class AdminPage extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                     <DropdownItem>
-                    <Link to="/listProduct">List Products</Link>
+                    <Link to="/listProduct">LIST PRODUCTS</Link>
                   </DropdownItem>
+                  <DropdownItem divider />
                   <DropdownItem>
-                    <Link to="/addProduct">Add Product</Link>
+                    <Link to="/addProduct">ADD PRODUCTS</Link>
                   </DropdownItem>
                   </DropdownMenu>
-                    </UncontrolledDropdown>
-                    <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
                     Orders
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                    <DropdownItem>
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                  <DropdownItem>
                     <Link to="/listOrder">List Orders</Link>
                   </DropdownItem>
+                  <DropdownItem divider />
                   <DropdownItem>
                     <Link to="/addOrder">Add Order</Link>
                   </DropdownItem>
