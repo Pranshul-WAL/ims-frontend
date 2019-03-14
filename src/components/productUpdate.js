@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
+import {Redirect} from "react-router-dom";
 
 
 
@@ -43,6 +44,7 @@ class ProductUpdate extends Component {
                 <label>Quantity:</label>
                 <Input type="text"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                 <Button onClick={this.updateProductHandler}>Update</Button>
+                {localStorage.getItem('isProductUpdate') ? <Redirect to='/listProduct' /> : null}
             </div>
         );
     }

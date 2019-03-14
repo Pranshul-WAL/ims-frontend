@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input, Label, FormGroup } from 'reactstrap';
+import {Redirect} from "react-router-dom";
 // import userList from './userList';
 // import { Redirect } from "react-router-dom";
 class UserUpdate extends Component {
@@ -63,6 +64,8 @@ class UserUpdate extends Component {
                         { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
                     <Button onClick={this.updateUserHandler}>Update</Button>    
                     </FormGroup>
+                    {localStorage.getItem('isUserUpdate') ? <Redirect to='/list' /> : null}
+                    {localStorage.removeItem('isUserUpdate')}
                 
                 
             </div>

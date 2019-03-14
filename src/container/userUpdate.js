@@ -24,6 +24,8 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await update(username, password, role, userId)
+                    localStorage.setItem('isUserUpdate',true)
+    
                     
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {

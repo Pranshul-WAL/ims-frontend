@@ -27,7 +27,7 @@ const MapDispatchToProps=(dispatch)=>{
     
                     await updateProduct(productName,salePrice,productDescription,Quantity)
                    
-                    
+                    localStorage.setItem('isProductUpdate',true)
     
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {
