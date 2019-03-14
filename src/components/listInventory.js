@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-
+import AdminPage from './adminPage';
 class listInventory extends Component {
 
     componentDidMount() {
@@ -8,6 +8,11 @@ class listInventory extends Component {
     }
     render() {
         return (
+            <AdminPage>
+            <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
             <Table hover>
                 <thead>
                     <tr>
@@ -33,7 +38,10 @@ class listInventory extends Component {
                         )
                     })}
                 </tbody>
+                </div>
+                </div>
             </Table>
+            </AdminPage>
         );
     }
 }

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
+import {Redirect} from "react-router-dom";
 //import {createNew} from '../api/users';
 import {axiosInstance} from '../api/index';
 import AdminPage from './adminPage';
@@ -12,6 +13,7 @@ class OrderCreate extends Component {
         this.handleChangeProductName=this.handleChangeProductName.bind(this);
         this.handleChangeProductId=this.handleChangeProductId.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
+        this.handleChangeCreate=this.handleChangeCreate.bind(this);
     }
     handleChangeProductName=(e)=>{
         this.props.getProductname(e.target.value);
@@ -23,18 +25,10 @@ class OrderCreate extends Component {
     handleChangeQuantity=(e)=>{
         this.props.getQuantity(e.target.value);
     }
-    createOrder=()=>{
-        const axios=axiosInstance();
-        return axios({
-            method:'post',
-            url:'/user/admin/product/add',
-            data:{
-                productId:this.props.productId,
-                productName:this.props.productName,
-                Quantity:this.props.Quantity
-            }
-        })
+    handleChangeCreate=()=>{
+        this.props.createOrder(this.props.productName,this.props.productId,this.props.Quantity);
     }
+    
     // componentDidMount(){
     //     this.props.createUser();
     // }
@@ -44,14 +38,17 @@ class OrderCreate extends Component {
             <div align="center">
                 <h1>Create New Order</h1><hr/>
                 <label>Product Name:</label>
-                <Input type="text"  value={this.props.input} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
+                <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
                 <label>Product Id:</label>
-                <Input type="text"  value={this.props.input} onChange={this.handleChangeProductId} placeholder="Enter Product Id"></Input>
+                <Input type="number"  value={this.props.productId} onChange={this.handleChangeProductId} placeholder="Enter Product Id"></Input>
                 <label>Quantity:</label>
-                <Input type="text"  value={this.props.input} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
-                <Button onClick={createOrder()}>Create</Button>
+                <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
+                <Button onClick={this.handleChangeCreate}>Create</Button>
             </div>
+            {localStorage.getItem('isOrder') ? <Redirect to='/listOrder' /> : null}
+            {localStorage.removeItem('isOrder')}
             </AdminPage>
+            
         );
     }
 }

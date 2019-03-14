@@ -11,7 +11,8 @@ import ProductList from "./container/productList";
 import ProductUpdate from './container/productUpdate';
 import UserUpdate from './container/userUpdate';
 import './App.css';
-
+import OrderCreate from './container/createOrder';
+import orders from './container/listOrders';
 
 
 class Main extends React.Component{
@@ -33,6 +34,8 @@ class Main extends React.Component{
                   <Route path='/listProduct' component={ProductList}></Route>
                   <Route path='/updateUser/:userId' component={UserUpdate}></Route>
                   <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
+                  <Route path='/addOrder' component={OrderCreate}></Route>
+                  <Route path='/listOrder' component={orders}></Route>
               </Switch>
             </Router>
         )

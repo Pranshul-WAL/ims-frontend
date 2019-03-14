@@ -10,6 +10,7 @@ import listInventory from './listInventory';
 import listOrders from './listOrders';
 import listReturns from './listReturns';
 
+
 import {combineReducers} from 'redux';
 
 const combinedReducer=combineReducers({
@@ -24,6 +25,7 @@ const combinedReducer=combineReducers({
     listInventory,
     listOrders,
     listReturns,
+    
 })
 
 export default combinedReducer;

@@ -9,7 +9,7 @@ const listOrders = (state = initialState, action) => {
             ...state,
             isLoading: action.payload,
         }
-        case 'LISTORDERS': return {
+        case 'LISTORDERS': return { 
             ...state,
             orders: action.payload,
         }

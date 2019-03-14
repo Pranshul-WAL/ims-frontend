@@ -1,7 +1,8 @@
 const initialState={
     productName:'', 
     productId:'',
-    Quantity:''
+    Quantity:'',
+    isLoading:false
 }
 
 const order=(state=initialState,action)=>{
@@ -15,7 +16,7 @@ const order=(state=initialState,action)=>{
         case 'GET_PRODUCT_ID':{
             return{
                 ...state,
-                productId:action.payload
+                productId:action.payloadorder
             }
         }
         case 'GET_QUANTITY':{
@@ -23,6 +24,15 @@ const order=(state=initialState,action)=>{
                 ...state,
                 Quantity:action.payload
             }
+        }
+        case 'SET_LOADING':{
+            return{
+                ...state,
+                isLoading:action.payload
+            }
+        }
+        case 'CLEAR_FORM':{
+            return initialState
         }
         
         default: return state   
