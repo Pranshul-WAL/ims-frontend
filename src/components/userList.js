@@ -29,7 +29,7 @@ class UserList extends Component {
         return (
             <AdminPage>
             <br></br>
-            <h1 className="user-style"> Users</h1>
+            <h1 className="UserStyle user-style"> Users</h1>
                 <div class="row">
                     <div class="col-sm-2">
                     </div>
@@ -48,7 +48,7 @@ class UserList extends Component {
                                     return (
                                         <tr>
                                             <td>{userDetails.userName}</td>
-                                            <td>{userDetails.role}</td>
+                                            <td>{userDetails.role === 1 ? 'Admin': (userDetails.role === 2) ? 'Operator' : 'Stockist'}</td>
                                             <td><Button onClick={() => { 
                                                 this.deleteHandler(userDetails.id) }}>Delete</Button></td>
                                             <td><Link to={`/updateUser/${userDetails.id}`}>Update</Link></td>
