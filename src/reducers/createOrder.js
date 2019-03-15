@@ -1,6 +1,5 @@
 const initialState={
     productName:'', 
-    productId:'',
     Quantity:'',
     isLoading:false
 }
@@ -13,16 +12,10 @@ const order=(state=initialState,action)=>{
                 productName:action.payload
             }
         }
-        case 'GET_PRODUCT_ID':{
-            return{
-                ...state,
-                productId:action.payload
-            }
-        }
         case 'GET_QUANTITY':{
             return{
                 ...state,
-                Quantity:action.payload
+                Quantity:Number(action.payload)
             }
         }
         case 'SET_LOADING':{

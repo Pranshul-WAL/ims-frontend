@@ -21,7 +21,7 @@ class ListOrders extends Component {
                         <th>Order Id</th>
                         <th>Product Id</th>
                         <th>Product Name</th>
-                        <th>Return</th>
+                        <th>Quantity</th>
                         <th>Placed On</th>
                     </tr>
                 </thead>
@@ -33,7 +33,7 @@ class ListOrders extends Component {
                                 <td>{element.orderId}</td>
                                 <td>{element.productId}</td>
                                 <td>{element.productName}</td>
-                                <td>{element.isReturn ? 'True' : 'False'}</td>
+                                <td>{element.orderQuantity}</td>
                                 <td>{moment(element.createdAt).format('DD MMM YYYY')}</td>
                             </tr>
                         )

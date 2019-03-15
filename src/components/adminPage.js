@@ -47,7 +47,7 @@ class AdminPage extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                    <UncontrolledDropdown nav inNavbar>
+                   {JSON.parse(localStorage.getItem("role")) === 1 ? <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                     Users
                     </DropdownToggle>
@@ -60,8 +60,8 @@ class AdminPage extends Component {
                     <Link to="/add">ADD USERS</Link>
                   </DropdownItem>
                   </DropdownMenu>
-                    </UncontrolledDropdown>
-                    <UncontrolledDropdown nav inNavbar>
+                    </UncontrolledDropdown> : null}
+                    {JSON.parse(localStorage.getItem("role")) === 1 || JSON.parse(localStorage.getItem("role")) === 3 ? <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                     Products
                     </DropdownToggle>
@@ -74,8 +74,8 @@ class AdminPage extends Component {
                     <Link to="/addProduct">ADD PRODUCTS</Link>
                   </DropdownItem>
                   </DropdownMenu>
-                  </UncontrolledDropdown>
-                  <UncontrolledDropdown nav inNavbar>
+                  </UncontrolledDropdown> :null}
+                  {JSON.parse(localStorage.getItem("role")) === 1 || JSON.parse(localStorage.getItem("role")) === 2 ? <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     Orders
                   </DropdownToggle>
@@ -88,7 +88,7 @@ class AdminPage extends Component {
                     <Link to="/addOrder">Add Order</Link>
                   </DropdownItem>
                   </DropdownMenu>
-                    </UncontrolledDropdown>
+                    </UncontrolledDropdown>:null}
                     <NavItem>
                     <Link className="nav-link" to="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
                     </NavItem>

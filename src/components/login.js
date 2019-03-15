@@ -8,7 +8,7 @@ import {
     Label,
     Form,FormGroup, Input} from 'reactstrap';
 // import AdminPage from './adminPage';
-import {Redirect} from "react-router-dom";
+import {Redirect, withRouter} from "react-router-dom";
 import Swal from 'sweetalert2';
 
 class Login extends Component{
@@ -25,7 +25,7 @@ class Login extends Component{
     handleChangePassword(e){
         this.props.getPassword(e.target.value)
     }
-    loginHandler(username, password) {
+    loginHandler(username, password,props) {
         if(username===""||password===""){
             Swal.fire({
                 position: 'center',
@@ -35,8 +35,14 @@ class Login extends Component{
                 timer: 1500,
 
               })
-        }else{
-        this.props.loginUser(username, password);} 
+        } else {
+            this.props.loginUser(username, password,props);
+            
+            // console.log(localStorage.getItem("isLogin"), localStorage.getItem("role"))
+            
+        }
+
+    
     }
     logoutHandler(){
         localStorage.setItem('isLogout',true);
@@ -58,11 +64,12 @@ class Login extends Component{
                             <FormGroup>
                                 <Input value={this.props.password} onChange={this.handleChangePassword} type="password" name="password" id="Password" placeholder="Enter the password" />
                             </FormGroup>
-                            <Button color="success" onClick={() =>{this.loginHandler(this.props.username, this.props.password)}}>Login</Button> 
+                            <Button color="success" onClick={() =>{this.loginHandler(this.props.username, this.props.password,this.props)}}>Login</Button> 
                             
                         </Form>
                         {localStorage.getItem('isLogout') ? <Redirect to='/login' /> : null}            
-                        {localStorage.getItem('isLogin') ? <Redirect to='/admin' /> : null}
+                        {localStorage.getItem('isLogin')  ? <Redirect to='/admin'/>:null }
+                        {/* {localStorage.getItem('role')===3?<Redirect to='/list'/>:null} */}
                     </div>
                 </div>
             </div>
@@ -72,4 +79,4 @@ class Login extends Component{
     
 }
 
-export default Login;
+export default withRouter(Login);

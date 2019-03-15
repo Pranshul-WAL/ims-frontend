@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import { Button } from 'reactstrap';
+import { Button,Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import AdminPage from './adminPage';
 
@@ -17,7 +17,8 @@ class UserList extends Component {
         }
     }
     componentDidMount() {
-
+        console.log(this.props.userDetails.length);
+        
         // (async() => {
         //     let response = await listUser()
         //     console.log(response.data);

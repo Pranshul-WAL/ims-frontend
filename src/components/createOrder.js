@@ -11,7 +11,6 @@ class OrderCreate extends Component {
         super(props);
 
         this.handleChangeProductName=this.handleChangeProductName.bind(this);
-        this.handleChangeProductId=this.handleChangeProductId.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
         this.handleChangeCreate=this.handleChangeCreate.bind(this);
     }
@@ -19,14 +18,12 @@ class OrderCreate extends Component {
         this.props.getProductname(e.target.value);
     }
     
-    handleChangeProductId=(e)=>{
-        this.props.getProductId(e.target.value);
-    }
+
     handleChangeQuantity=(e)=>{
         this.props.getQuantity(e.target.value);
     }
     handleChangeCreate=()=>{
-        this.props.createOrder(this.props.productName,this.props.productId,this.props.Quantity);
+        this.props.createOrder(this.props.productName,this.props.Quantity);
     }
     
     // componentDidMount(){
@@ -40,8 +37,6 @@ class OrderCreate extends Component {
                 <h1>Create New Order</h1><hr/>
                 <label>Product Name:</label>
                 <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
-                <label>Product Id:</label>
-                <Input type="number"  value={this.props.productId} onChange={this.handleChangeProductId} placeholder="Enter Product Id"></Input>
                 <label>Quantity:</label>
                 <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                 <Button onClick={this.handleChangeCreate}>Create</Button>

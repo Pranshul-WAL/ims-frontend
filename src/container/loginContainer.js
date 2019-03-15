@@ -1,6 +1,7 @@
 import Login from '../components/login';
 import { connect } from 'react-redux';
 import { login } from '../api/login'
+import {withRouter} from "react-router-dom";
 
 const mapStateToProps = state => {
     return {
@@ -13,7 +14,7 @@ const mapDispatchToProps = dispatch => {
     return {
         getUsername: (value) => dispatch({ type: 'USERNAME_VALUE', payload: value }),
         getPassword: (value) => dispatch({ type: 'PASSWORD_VALUE', payload: value }),
-        loginUser: (username, password) => {
+        loginUser: (username, password,props) => {
             (async () => {
                 dispatch({ type: 'SET_LOADING', payload: true })
 
@@ -21,7 +22,13 @@ const mapDispatchToProps = dispatch => {
                 if (loginResponse.data.token !== null && loginResponse.data.token !== undefined) {
                     localStorage.setItem('token', loginResponse.data.token)
                     localStorage.setItem('role', loginResponse.data.user.role)
+                    localStorage.setItem('userId',loginResponse.data.user.id)
                     localStorage.setItem('isLogin',true)
+                    // if (localStorage.getItem("isLogin") && localStorage.getItem("role") === 3) {
+                
+                    //     console.log(props)
+                    //     props.history.push("/stockist")
+                    // }
                 } else {
                     alert('Enter valid credentials');
                 }
@@ -34,5 +41,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
 

@@ -17,6 +17,7 @@ import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
 
 
+
 class Main extends React.Component{
 
     render(){
@@ -38,6 +39,7 @@ class Main extends React.Component{
                   <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
                   <Route path='/addOrder' component={OrderCreate}></Route>
                   <Route path='/listOrder' component={orders}></Route>
+                  
               </Switch>
             </Router>
         )
