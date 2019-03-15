@@ -1,6 +1,7 @@
 import UserCreate from '../components/userCreate';
 import {connect} from 'react-redux';
-import { createNew } from '../api/users'
+import { createNew } from '../api/users';
+import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
     return{
@@ -23,6 +24,13 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await createNew(username, password, role)
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'User has been added',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     localStorage.setItem('isUserCreate',true)
                     dispatch({ type: 'CLEAR_FORM' })
                     dispatch({type: 'SET_LOADING', payload: false})

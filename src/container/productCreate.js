@@ -1,6 +1,7 @@
 import ProductCreate from '../components/productCreate';
 import { connect } from 'react-redux';
-import { createProduct } from '../api/products'
+import { createProduct } from '../api/products';
+import Swal from 'sweetalert2'
 
 const MapStateToProps = (state) => {
     return {
@@ -24,6 +25,13 @@ const MapDispatchToProps = (dispatch) => {
                     dispatch({ type: 'SET_LOADING', payload: true })
 
                     await createProduct(productName, salePrice, productDescription, Quantity)
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Product has been added',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     localStorage.setItem('isProductCreate',true)
                     dispatch({ type: 'CLEAR_FORM' })
 

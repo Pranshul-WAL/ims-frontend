@@ -1,6 +1,7 @@
 import ProductUpdate from '../components/productUpdate';
 import {connect} from 'react-redux';
 import { updateProduct } from '../api/products';
+import Swal from 'sweetalert2'
 
 
 const MapStateToProps=(state)=>{
@@ -26,6 +27,13 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await updateProduct(productName,salePrice,productDescription,Quantity,productId)
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Product has been updated',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                    
                     localStorage.setItem('isProductUpdate',true)
     

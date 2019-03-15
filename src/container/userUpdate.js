@@ -2,6 +2,7 @@ import UserUpdate from '../components/userUpdate';
 import {connect} from 'react-redux';
 import { update } from '../api/users';
 // import { listUser } from '../api/users';
+import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
     return{
@@ -24,6 +25,13 @@ const MapDispatchToProps=(dispatch)=>{
                     dispatch({type:'SET_LOADING', payload:true})
     
                     await update(username, password, role, userId)
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'User has been Updated',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     localStorage.setItem('isUserUpdate',true)
     
                     
