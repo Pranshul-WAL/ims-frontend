@@ -1,14 +1,14 @@
 import axiosInstance from './'
 
-export const createOrder=()=>{
+export const newOrder=(productName,productId,Quantity)=>{
     const axios=axiosInstance();
     return axios({
-        method:'post',
-        url:'/order/add',
+        method:'POST',
+        url:'/order/create',
         data:{
-            productId:this.props.productId,
-            productName:this.props.productName,
-            Quantity:this.props.Quantity
+            productId:productId,
+            productName:productName,
+            orderQuantity:Quantity
         }
     })
 }

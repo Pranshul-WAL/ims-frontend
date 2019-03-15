@@ -1,6 +1,6 @@
 import OrderCreate from '../components/createOrder';
 import {connect} from 'react-redux';
-import {createOrder} from '../api/order'
+import {newOrder} from '../api/order'
 
 const MapStateToProps=(state)=>{
     return{
@@ -21,7 +21,7 @@ const MapDispatchToProps=(dispatch)=>{
             (async()=>{
                 try{
                     dispatch({type:'IS_LOADING',payload:true})
-                    await createOrder(productName,productId,Quantity)
+                    await newOrder(productName,productId,Quantity)
                     localStorage.setItem('isOrder',true)
                     dispatch({type:'CLEAR_FROM'})
                     dispatch({type:'IS_LOADING',payload:false})
@@ -30,7 +30,6 @@ const MapDispatchToProps=(dispatch)=>{
                 }
             })()
         }
-      
 
     }
 }

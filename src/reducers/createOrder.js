@@ -16,7 +16,7 @@ const order=(state=initialState,action)=>{
         case 'GET_PRODUCT_ID':{
             return{
                 ...state,
-                productId:action.payloadorder
+                productId:action.payload
             }
         }
         case 'GET_QUANTITY':{
