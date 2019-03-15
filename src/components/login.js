@@ -9,6 +9,7 @@ import {
     Form,FormGroup, Input} from 'reactstrap';
 // import AdminPage from './adminPage';
 import {Redirect} from "react-router-dom";
+import Swal from 'sweetalert2';
 
 class Login extends Component{
     constructor(props){
@@ -25,7 +26,17 @@ class Login extends Component{
         this.props.getPassword(e.target.value)
     }
     loginHandler(username, password) {
-        this.props.loginUser(username, password);    
+        if(username===""||password===""){
+            Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Please Enter the Credentials',
+                showConfirmButton: false,
+                timer: 1500,
+
+              })
+        }else{
+        this.props.loginUser(username, password);} 
     }
     logoutHandler(){
         localStorage.setItem('isLogout',true);

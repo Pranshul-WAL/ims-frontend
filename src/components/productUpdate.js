@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
-
+import Swal from 'sweetalert2';
 import AdminPage from './adminPage';
 
 class ProductUpdate extends Component {
@@ -27,7 +27,17 @@ class ProductUpdate extends Component {
         this.props.getQuantity(e.target.value);
     }
     updateProductHandler(){
-        this.props.updateProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity,this.props.match.params.productId)
+        if(this.props.productName===""||this.props.salePrice===""||this.props.productDescription===""||this.props.Quantity===""||this.props.match.params.productId===""){
+            Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Please Enter the Credentials    ',
+                showConfirmButton: false,
+                timer: 1500,
+
+              })
+        }else{
+        this.props.updateProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity,this.props.match.params.productId)}
     }
     
     render() {

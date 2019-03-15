@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
 import AdminPage from './adminPage';
+import Swal from 'sweetalert2';
 
 
 class ProductCreate extends Component {
@@ -28,7 +29,14 @@ class ProductCreate extends Component {
     }
     createProductHandler(){
         if(this.props.productName===""||this.props.salePrice===""||this.props.productDescription===""||this.props.Quantity===""){
-            alert('Enter Valid Credentials');
+            Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Please Enter the Credentials    ',
+                showConfirmButton: false,
+                timer: 1500,
+
+              })
         }else{
         this.props.createProduct(this.props.productName,this.props.salePrice,this.props.productDescription,this.props.Quantity)}
     }

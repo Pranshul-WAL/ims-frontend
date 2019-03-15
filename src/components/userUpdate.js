@@ -3,6 +3,7 @@ import { Button, Input, Label, FormGroup } from 'reactstrap';
 import {Redirect} from "react-router-dom";
 // import userList from './userList';
 // import { Redirect } from "react-router-dom";
+import Swal from 'sweetalert2';
 class UserUpdate extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +25,14 @@ class UserUpdate extends Component {
     }
     updateUserHandler() {
         if (this.props.username ==="" || this.props.password ==="" || this.props.role ==="") {
-            alert('Enter valid credentials.');
+            Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Please Enter the Credentials    ',
+                showConfirmButton: false,
+                timer: 1500,
+
+              })
         } else {
         this.props.updateUser(this.props.username, this.props.password, this.props.role, this.props.match.params.userId);
         }

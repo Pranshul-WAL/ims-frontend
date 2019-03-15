@@ -2,6 +2,8 @@ import React,{Component, } from 'react';
 import {Button,Input,Label,FormGroup} from 'reactstrap';
 import {Redirect} from "react-router-dom";
 import AdminPage from './adminPage';
+import Swal from 'sweetalert2';
+
 class UserCreate extends Component {
     constructor(props){
         super(props);
@@ -23,7 +25,14 @@ class UserCreate extends Component {
     }
     createUserHandler(){
         if (this.props.username ==="" || this.props.password === "" || this.props.role === "") {
-            alert('Enter valid credentials.')
+            Swal.fire({
+                position: 'center',
+                type: 'error',
+                title: 'Please Enter the Credentials    ',
+                showConfirmButton: false,
+                timer: 1500,
+
+              })
         } else {
         this.props.createUser(this.props.username, this.props.password, this.props.role)
         }
