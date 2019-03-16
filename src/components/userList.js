@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import { Button,Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import AdminPage from './adminPage';
 

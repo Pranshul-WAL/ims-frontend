@@ -27,17 +27,16 @@ class ListOrders extends Component {
                 </thead>
                 <tbody>
                 {this.props.orders.map((orders)=> {
-                    return orders.orderItems.map((element) => {
-                        return(
+                    return(
+                        
                             <tr>
-                                <td>{element.orderId}</td>
-                                <td>{element.productId}</td>
-                                <td>{element.productName}</td>
-                                <td>{element.orderQuantity}</td>
-                                <td>{moment(element.createdAt).format('DD MMM YYYY')}</td>
+                                <td>{orders.orderId}</td>
+                                <td>{orders.productId}</td>
+                                <td>{orders.productName}</td>
+                                <td>{orders.orderQuantity}</td>
+                                <td>{moment(orders.createdAt).format('DD MMM YYYY')}</td>
                             </tr>
-                        )
-                    })
+                    )
                 })
             }
                 </tbody>

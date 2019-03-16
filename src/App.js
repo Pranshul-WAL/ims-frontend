@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route ,Switch,Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import login from './container/loginContainer';
 import AdminPage from "./components/adminPage";
 import UserPage from "./components/userPage";
@@ -15,37 +15,39 @@ import UserUpdate from './container/userUpdate';
 import './App.css';
 import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
+import listReturns from './container/listReturns';
 
 
 
-class Main extends React.Component{
+class Main extends React.Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <Router>
-              <Switch>
-                  <Route path='/login' component={login}></Route>
-                  <Route exact path='/' render={() => {
-                      return <Redirect to='/login' />
-                  }} />
-                   <Route path ='/admin' component={AdminPage}></Route>
-                  <Route path ='/enduser' component={UserPage}></Route>
-                  <Route path='/add' component={UserCreate}></Route>
-                  <Route path='/list' component={UserList}></Route>
-                  <Route path='/product' component={ProductPage}></Route>
-                  <Route path='/addProduct' component={ProductCreate}></Route>
-                  <Route path='/listProduct' component={ProductList}></Route>
-                  <Route path='/updateUser/:userId' component={UserUpdate}></Route>
-                  <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
-                  <Route path='/addOrder' component={OrderCreate}></Route>
-                  <Route path='/listOrder' component={orders}></Route>
+                <Switch>
+                    <Route path='/login' component={login}></Route>
+                    <Route exact path='/' render={() => {
+                        return <Redirect to='/login' />
+                    }} />
+                    <Route path='/admin' component={AdminPage}></Route>
+                    <Route path='/enduser' component={UserPage}></Route>
+                    <Route path='/add' component={UserCreate}></Route>
+                    <Route path='/list' component={UserList}></Route>
+                    <Route path='/product' component={ProductPage}></Route>
+                    <Route path='/addProduct' component={ProductCreate}></Route>
+                    <Route path='/listProduct' component={ProductList}></Route>
+                    <Route path='/updateUser/:userId' component={UserUpdate}></Route>
+                    <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
+                    <Route path='/addOrder' component={OrderCreate}></Route>
+                    <Route path='/listOrder' component={orders}></Route>
+                    <Route path='/listReturns' component={listReturns}></Route> 
                   
               </Switch>
             </Router>
-        )
-    }
-    
-}
-
-export default Main;
-
+                )
+            }
+            
+        }
+        
+        export default Main;
+        

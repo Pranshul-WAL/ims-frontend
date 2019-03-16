@@ -4,13 +4,12 @@ import { Button } from 'reactstrap';
 import logo from '../logo.jpg'
 
 import {
-    Collapse,
+  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
