@@ -7,3 +7,10 @@ export const fetchOrders = () => {
         url: '/order/listall',
     })
 }
+
+export const listOrders = () => {
+    const axios({
+        method:'GET',
+        url: '/order/orders'
+    })
+}
