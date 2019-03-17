@@ -11,6 +11,13 @@ export const fetchOrders = () => {
 export const listOrders = () => {
     const axios({
         method:'GET',
-        url: '/order/orders'
-    })
+        url: '/order/orders',
+    });
+}
+
+export const listOrderItems = (params) => {
+    const axios({
+        method: 'GET',
+        url: `/order/listItems/${id}`,
+    });
 }
