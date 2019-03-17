@@ -15,9 +15,9 @@ import UserUpdate from './container/userUpdate';
 import './App.css';
 import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
+import CreateOrderMult from './container/createMultorder';
 import listReturns from './container/listReturns';
 import listInventory from './container/listInventory';
-
 
 
 class Main extends React.Component {
@@ -25,25 +25,25 @@ class Main extends React.Component {
     render() {
         return (
             <Router>
-                <Switch>
-                    <Route path='/login' component={login}></Route>
-                    <Route exact path='/' render={() => {
-                        return <Redirect to='/login' />
-                    }} />
-                    <Route path='/admin' component={AdminPage}></Route>
-                    <Route path='/enduser' component={UserPage}></Route>
-                    <Route path='/add' component={UserCreate}></Route>
-                    <Route path='/list' component={UserList}></Route>
-                    <Route path='/product' component={ProductPage}></Route>
-                    <Route path='/addProduct' component={ProductCreate}></Route>
-                    <Route path='/listProduct' component={ProductList}></Route>
-                    <Route path='/updateUser/:userId' component={UserUpdate}></Route>
-                    <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
-                    <Route path='/addOrder' component={OrderCreate}></Route>
-                    <Route path='/listOrder' component={orders}></Route>
-                    <Route path='/listReturns' component={listReturns}></Route> 
-                    <Route path='/listInventory' component={listInventory}></Route>
-                  
+              <Switch>
+                  <Route path='/login' component={login}></Route>
+                  <Route exact path='/' render={() => {
+                      return <Redirect to='/login' />
+                  }} />
+                   <Route path ='/admin' component={AdminPage}></Route>
+                  <Route path ='/enduser' component={UserPage}></Route>
+                  <Route path='/add' component={UserCreate}></Route>
+                  <Route path='/list' component={UserList}></Route>
+                  <Route path='/product' component={ProductPage}></Route>
+                  <Route path='/addProduct' component={ProductCreate}></Route>
+                  <Route path='/listProduct' component={ProductList}></Route>
+                  <Route path='/updateUser/:userId' component={UserUpdate}></Route>
+                  <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
+                  <Route path='/addOrder' component={OrderCreate}></Route>
+                  <Route path='/listOrder' component={orders}></Route>
+                  <Route path='/listmult' component={CreateOrderMult}></Route>
+                  <Route path='/listReturns' component={listReturns}></Route> 
+                  <Route path='/listInventory' component={listInventory}></Route>
               </Switch>
             </Router>
                 )

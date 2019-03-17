@@ -24,7 +24,7 @@ class ProductUpdate extends Component {
         this.props.getProductDescription(e.target.value);
     }
     handleChangeQuantity=(e)=>{
-        this.props.getQuantity(e.target.value);
+        this.props.getUpdateQuantity(e.target.value);
     }
     updateProductHandler(){
         if(this.props.productName===""||this.props.salePrice===""||this.props.productDescription===""||this.props.Quantity===""||this.props.match.params.productId===""){
