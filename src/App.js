@@ -16,6 +16,7 @@ import './App.css';
 import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
 import listReturns from './container/listReturns';
+import listInventory from './container/listInventory';
 
 
 
@@ -41,6 +42,7 @@ class Main extends React.Component {
                     <Route path='/addOrder' component={OrderCreate}></Route>
                     <Route path='/listOrder' component={orders}></Route>
                     <Route path='/listReturns' component={listReturns}></Route> 
+                    <Route path='/listInventory' component={listInventory}></Route>
                   
               </Switch>
             </Router>

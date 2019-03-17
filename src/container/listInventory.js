@@ -1,4 +1,4 @@
-import inventory from '../component/listInventory';
+import Inventory from '../components/listInventory';
 import {connect} from 'react-redux';
 // list user api from axios 
 import {listInventory} from '../api/listInventory'
@@ -15,11 +15,11 @@ const MapStateToProps = (state) => {
             (async() => {
                 dispatch({type:'ISLOADING', payload: true });
                 let response = await listInventory();
-                dispatch({type:'LISTINVENTORY', payload: response.data});
+                dispatch({type:'LISTINVENTORY', payload: response.data.allRecords});
                 dispatch({type:'ISLOADING', payload: false});
              })()
          }
      }
  }
 
- export default connect(MapStateToProps, MapDispatchToProps)(inventory);
+ export default connect(MapStateToProps, MapDispatchToProps)(Inventory);

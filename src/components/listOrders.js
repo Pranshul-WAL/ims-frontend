@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-import moment from 'moment'
+import moment from 'moment';
 import AdminPage from './adminPage';
 class ListOrders extends Component {
     componentDidMount() {
