@@ -12,7 +12,7 @@ const order=(state=initialState,action)=>{
                 productName:action.payload
             }
         }
-        case 'GET_QUANTITY':{
+        case 'GET_ORDER_QUANTITY':{
             return{
                 ...state,
                 Quantity:Number(action.payload)

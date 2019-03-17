@@ -19,7 +19,7 @@ const MapDispatchToProps=(dispatch)=>{
         getProductname:(value)=>dispatch({type:'GET_PRODUCT_NAME',payload:value}),
         getSalePrice:(value)=>dispatch({type:'GET_SALE_PRICE',payload:value}),
         getProductDescription:(value)=>dispatch({type:'GET_DESCRIPTION', payload:value}),
-        getQuantity:(value)=>dispatch({type:'GET_QUANTITY',payload:value}),
+        getUpdateQuantity:(value)=>dispatch({type:'GET_UPDATE_QUANTITY',payload:value}),
         updateProduct:(productName,salePrice,productDescription,Quantity,productId)=>{
 
             (async() => {

@@ -26,7 +26,7 @@ const productUpdate=(state=initialState,action)=>{
                 productDescription:action.payload
             }
         }
-        case 'GET_QUANTITY':{
+        case 'GET_UPDATE_QUANTITY':{
             return{
                 ...state,
                 Quantity:action.payload

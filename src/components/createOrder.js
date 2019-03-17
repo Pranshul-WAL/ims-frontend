@@ -20,7 +20,7 @@ class OrderCreate extends Component {
     
 
     handleChangeQuantity=(e)=>{
-        this.props.getQuantity(e.target.value);
+        this.props.getOrderQuantity(e.target.value);
     }
     handleChangeCreate=()=>{
         this.props.createOrder(this.props.productName,this.props.Quantity);

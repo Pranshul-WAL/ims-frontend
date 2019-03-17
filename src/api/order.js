@@ -4,7 +4,7 @@ export const newOrder=(productName,Quantity)=>{
     const axios=axiosInstance();
     return axios({
         method:'POST',
-        url:'/order/create',
+        url:'/order/add',
         data:{
             productName:productName,
             orderQuantity:Quantity

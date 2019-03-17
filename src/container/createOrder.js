@@ -14,7 +14,7 @@ const MapStateToProps=(state)=>{
 const MapDispatchToProps=(dispatch)=>{
     return{
         getProductname:(value)=>dispatch({type:'GET_PRODUCT_NAME',payload:value}),
-        getQuantity:(value)=>dispatch({type:'GET_QUANTITY',payload:value}),
+        getOrderQuantity:(value)=>dispatch({type:'GET_ORDER_QUANTITY',payload:value}),
         createOrder:(productName,Quantity)=>{
             (async()=>{
                 try{

@@ -15,6 +15,7 @@ import UserUpdate from './container/userUpdate';
 import './App.css';
 import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
+import CreateOrderMult from './container/createMultorder';
 
 
 
@@ -39,6 +40,7 @@ class Main extends React.Component{
                   <Route path='/updateProduct/:productId' component={ProductUpdate}></Route>
                   <Route path='/addOrder' component={OrderCreate}></Route>
                   <Route path='/listOrder' component={orders}></Route>
+                  <Route path='/listmult' component={CreateOrderMult}></Route>
                   
               </Switch>
             </Router>
