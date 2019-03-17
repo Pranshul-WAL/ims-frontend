@@ -12,6 +12,7 @@ const MapStateToProps=(state)=>{
         isLoading:state.order.isLoading,
         productDetails:state.productList.productDetails,
         dropdownOpen:state.CreateMultOrder.dropdownOpen,
+        products:state.CreateMultOrder.products
         
     }
 }
@@ -20,6 +21,17 @@ const MapDispatchToProps=(dispatch)=>{
     return{
         getProductname:(value)=>dispatch({type:'GET_PRODUCT_NAME',payload:value}),
         getOrderQuantity:(value)=>dispatch({type:'GET_ORDER_QUANTITY',payload:value}),
+        createMultOrder:(products)=>(async()=>{
+            try{
+                dispatch({type:'IS_LOADING',payload:true})
+                await newOrder(products)
+                localStorage.setItem('isOrder',true)
+                dispatch({type:'CLEAR_FROM'})
+                dispatch({type:'IS_LOADING',payload:false})
+            }catch(e){
+                console.log(e)
+                    }
+                })(),
         getMultiOrderQuantity:(productId, Quantity, salePrice, productName)=>{
             dispatch((dispatch, getState) => {
                 let newOrderArray
@@ -40,19 +52,19 @@ const MapDispatchToProps=(dispatch)=>{
                 }
             })
         },
-        createOrder:(productName,Quantity)=>{
-            (async()=>{
-                try{
-                    dispatch({type:'IS_LOADING',payload:true})
-                    await newOrder(productName,Quantity)
-                    localStorage.setItem('isOrder',true)
-                    dispatch({type:'CLEAR_FROM'})
-                    dispatch({type:'IS_LOADING',payload:false})
-                }catch(e){
-                    console.log(e)
-                }
-            })()
-        },
+        // createOrder:(productName,Quantity)=>{
+        //     (async()=>{
+        //         try{
+        //             dispatch({type:'IS_LOADING',payload:true})
+        //             await newOrder(productName,Quantity)
+        //             localStorage.setItem('isOrder',true)
+        //             dispatch({type:'CLEAR_FROM'})
+        //             dispatch({type:'IS_LOADING',payload:false})
+        //         }catch(e){
+        //             console.log(e)
+        //         }
+        //     })()
+        // },
         fetchProducts:()=>{
             (async()=>{
                 dispatch({type:'SET_LOADING', payload:true});

@@ -117,3 +117,10 @@ element.style {
   color: white;
 }
 
+.style-right{
+  float: right;
+}
+
+.style-left {
+  float: left;
+}
