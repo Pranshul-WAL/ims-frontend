@@ -12,19 +12,25 @@ class CreateOrderMult extends Component{
     
         this.toggle = this.toggle.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
+        this.handleChangeCreate=this.handleChangeCreate.bind(this);
       }
       toggle(){
           this.props.toggleDropDown();
       }
       handleChangeQuantity=(productId, quantity, salePrice, productName)=>{
         this.props.getMultiOrderQuantity(productId, quantity, salePrice, productName);
-    }
+      }
+      handleChangeCreate=(products)=>{
+          this.props.createMultOrder(this.props.products);
+
+      }
     render(){
         return(
             <AdminPage>
             <div className="Login-main">
             <div className="Login-new">
                 <h1>Create New Order</h1><hr/>
+                <div className="style-left">
                 <Dropdown isOpen={this.props.dropdownOpen} toggle={this.toggle} >
                     <DropdownToggle caret>
                     Products
@@ -37,7 +43,6 @@ class CreateOrderMult extends Component{
                                     <>
                                     <DropdownItem>{productDetails.productName}</DropdownItem>
                                     <DropdownItem>{<Input type="number"   onChange={(event)=>{this.handleChangeQuantity(productDetails.id, event.target.value, productDetails.salePrice, productDetails.productName)}} placeholder="Enter Quantity"></Input>}</DropdownItem>
-                                    <DropdownItem>{<Button onClick={this.handleChangeCreate}>Add</Button>}</DropdownItem>
                                     </>
                                        
                         )})
@@ -45,15 +50,11 @@ class CreateOrderMult extends Component{
                         
             
                     </DropdownMenu>
-                </Dropdown>&nbsp;&nbsp;&nbsp;
-                <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>&nbsp;&nbsp;&nbsp;
-                <Button  size="lg" onClick={this.handleChangeCreate}>Add</Button>&nbsp;&nbsp;&nbsp;
+                </Dropdown>
+                </div>
+                <div className="style-right">
                 <Button  size="lg" onClick={this.handleChangeCreate}>Place Order</Button>      
-                {/* <label>Product Name:</label>
-                <Input type="text"  value={this.props.productName} onChange={this.handleChangeProductName} placeholder="Enter Product Name"></Input><br/>
-                <label>Quantity:</label>
-                <Input type="number"  value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
-                <Button onClick={this.handleChangeCreate}>Create</Button> */}
+                </div>
             </div>
             </div>
             {localStorage.getItem('isOrder') ? <Redirect to='/listOrder' /> : null}
