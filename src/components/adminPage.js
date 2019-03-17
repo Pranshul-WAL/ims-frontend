@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import logo from '../logo.jpg'
 
 import {
-    Collapse,
+  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,

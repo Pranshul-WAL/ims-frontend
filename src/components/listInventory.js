@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import AdminPage from './adminPage';
+import moment from 'moment';
 class listInventory extends Component {
 
+    count;
     componentDidMount() {
         this.props.fetchInventory();
+        this.count = 0;
     }
     render() {
         return (
             <AdminPage>
+            <br></br>
+            <h1 className="UserStyle user-style">History</h1>
             <div class="row">
             <div class="col-sm-2">
             </div>
@@ -16,6 +21,7 @@ class listInventory extends Component {
             <Table hover>
                 <thead>
                     <tr>
+                       <th>#</th>
                         <th>ProductId</th>
                         <th>UserID</th>
                         <th>Time</th>
@@ -25,22 +31,24 @@ class listInventory extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    { this.props.inventory.map((inventory) => {
+                    {  this.props.inventory.map((inventory) => {
                         return (
                             <tr>
+                               <td>{inventory.id}</td>
                                 <td>{inventory.productId}</td>
                                 <td>{inventory.userId}</td>
-                                <td>{inventory.timeAt}</td>
+                                <td>{moment(inventory.timeAt).format('DD MMM YYYY, h:mm:ss a')}</td>
                                 <td>{inventory.quantity}</td>
                                 <td>{inventory.salePrice}</td>
-                                <td>{inventory.isReturn}</td>
+                                <td>{inventory.isReturn ? 'TRUE' : 'FALSE'}</td>
                             </tr>
                         )
                     })}
                 </tbody>
+                </Table>
                 </div>
                 </div>
-            </Table>
+            
             </AdminPage>
         );
     }

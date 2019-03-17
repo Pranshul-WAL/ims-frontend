@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route ,Switch,Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import login from './container/loginContainer';
 import AdminPage from "./components/adminPage";
 import UserPage from "./components/userPage";
@@ -16,13 +16,14 @@ import './App.css';
 import OrderCreate from './container/createOrder';
 import orders from './container/listOrders';
 import CreateOrderMult from './container/createMultorder';
+import listReturns from './container/listReturns';
+import listInventory from './container/listInventory';
 
 
+class Main extends React.Component {
 
-class Main extends React.Component{
-
-    render(){
-        return(
+    render() {
+        return (
             <Router>
               <Switch>
                   <Route path='/login' component={login}></Route>
@@ -41,13 +42,14 @@ class Main extends React.Component{
                   <Route path='/addOrder' component={OrderCreate}></Route>
                   <Route path='/listOrder' component={orders}></Route>
                   <Route path='/listmult' component={CreateOrderMult}></Route>
-                  
+                  <Route path='/listReturns' component={listReturns}></Route> 
+                  <Route path='/listInventory' component={listInventory}></Route>
               </Switch>
             </Router>
-        )
-    }
-    
-}
-
-export default Main;
-
+                )
+            }
+            
+        }
+        
+        export default Main;
+        

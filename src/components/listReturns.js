@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import AdminPage from './adminPage';
+import moment from 'moment';
 class ListReturn extends Component {
     componentDidMount() {
         this.props.fetchReturns()
     }
     render() {
         return (
+            <AdminPage>
+            <br></br>
+            <h1 className="UserStyle user-style"> Returns</h1>
             <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
@@ -28,7 +32,7 @@ class ListReturn extends Component {
                             <td>{returns.productId}</td>
                             <td>{returns.productName}</td>
                             <td>{returns.quantity}</td>
-                            <td>{returns.date}</td>
+                            <td>{moment(returns.date).format('DD MMM YYYY')}</td>
                         </tr>
                     )
                 })}
@@ -36,6 +40,7 @@ class ListReturn extends Component {
             </Table>
             </div>
             </div>
+            </AdminPage>
         );
     }
 }

@@ -1,13 +1,13 @@
-import ListReturn from '../component/listReturns';
+import ListReturn from '../components/listReturns';
 import {connect} from 'react-redux';
 
-import listReturn from '../api/listReturn';
+import {listReturn} from '../api/listReturn';
 
 
 const MapStateToProps = (state) => {
     return {
         isLoading: state.listReturns.isLoading,
-        orders: state.listReturns.orders,
+        returns: state.listReturns.returns,
     }
 }
 
@@ -17,7 +17,7 @@ const  MapDispatchToProps = (dispatch) => {
            (async() => {
                dispatch({type:'ISLOADING', payload: true });
                let response = await listReturn();
-               dispatch({type:'LISTRETURNS', payload: response.data});
+               dispatch({type:'LISTRETURNS', payload: response.data.returns});
                dispatch({type:'ISLOADING', payload: false});
             })()
         }
