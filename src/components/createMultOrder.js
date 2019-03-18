@@ -20,7 +20,7 @@ class CreateOrderMult extends Component{
       handleChangeQuantity=(productId, quantity, salePrice, productName)=>{
         this.props.getMultiOrderQuantity(productId, quantity, salePrice, productName);
       }
-      handleChangeCreate=(products)=>{
+      handleChangeCreate=()=>{
           this.props.createMultOrder(this.props.products);
 
       }

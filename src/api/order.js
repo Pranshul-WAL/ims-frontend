@@ -6,7 +6,8 @@ export const newOrder=(products)=>{
         method:'POST',
         url:'/order/add',
         data:{
-           products
+        userId:localStorage.getItem('userId'),
+        products
         }
     })
 }

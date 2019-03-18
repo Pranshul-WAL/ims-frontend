@@ -2,7 +2,8 @@ import CreateOrderMult from '../components/createMultOrder';
 import {connect} from 'react-redux';
 import {newOrder} from '../api/order';
 import { listProducts } from '../api/products';
-import {unionBy} from 'lodash'
+import {unionBy} from 'lodash';
+import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
     return{
@@ -25,6 +26,13 @@ const MapDispatchToProps=(dispatch)=>{
             try{
                 dispatch({type:'IS_LOADING',payload:true})
                 await newOrder(products)
+                Swal.fire({
+                    position: 'top-end',
+                    type: 'success',
+                    title: 'Order has been placed!',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 localStorage.setItem('isOrder',true)
                 dispatch({type:'CLEAR_FROM'})
                 dispatch({type:'IS_LOADING',payload:false})
@@ -32,13 +40,13 @@ const MapDispatchToProps=(dispatch)=>{
                 console.log(e)
                     }
                 })(),
-        getMultiOrderQuantity:(productId, Quantity, salePrice, productName)=>{
+        getMultiOrderQuantity:(productId, receivedQuantity, salePrice, productName)=>{
             dispatch((dispatch, getState) => {
                 let newOrderArray
                 let orderArray = getState().CreateMultOrder.products
                 let newOrder = [{
                     productId,
-                    Quantity,
+                    Quantity: receivedQuantity.length ? Number(receivedQuantity) : 0,
                     salePrice,
                     productName
                 }]
@@ -52,19 +60,7 @@ const MapDispatchToProps=(dispatch)=>{
                 }
             })
         },
-        // createOrder:(productName,Quantity)=>{
-        //     (async()=>{
-        //         try{
-        //             dispatch({type:'IS_LOADING',payload:true})
-        //             await newOrder(productName,Quantity)
-        //             localStorage.setItem('isOrder',true)
-        //             dispatch({type:'CLEAR_FROM'})
-        //             dispatch({type:'IS_LOADING',payload:false})
-        //         }catch(e){
-        //             console.log(e)
-        //         }
-        //     })()
-        // },
+        
         fetchProducts:()=>{
             (async()=>{
                 dispatch({type:'SET_LOADING', payload:true});
