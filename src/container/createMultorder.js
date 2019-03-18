@@ -52,6 +52,7 @@ const MapDispatchToProps=(dispatch)=>{
                 }
             })
         },
+        resetQuantity:()=>dispatch({type:'RESET_QUANTITY'}),
         // createOrder:(productName,Quantity)=>{
         //     (async()=>{
         //         try{

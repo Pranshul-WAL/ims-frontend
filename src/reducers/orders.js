@@ -17,4 +17,4 @@ const Orders = (state = initialState, action) => {
     }
 }
 
-export default Orders,
+export default Orders;

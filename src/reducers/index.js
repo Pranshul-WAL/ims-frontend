@@ -10,7 +10,8 @@ import listInventory from './listInventory';
 import listOrders from './listOrders';
 import listReturns from './listReturns';
 import CreateMultOrder from './createMultorder';
-import Orders from './orders';
+import orders from './orders';
+import listItems from './listItems';
 
 
 import {combineReducers} from 'redux';
@@ -28,7 +29,8 @@ const combinedReducer=combineReducers({
     listOrders,
     listReturns,
     CreateMultOrder,
-    Orders,
+    orders,
+    listItems,
     
 })
 

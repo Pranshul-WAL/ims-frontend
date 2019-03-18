@@ -18,6 +18,8 @@ import orders from './container/listOrders';
 import CreateOrderMult from './container/createMultorder';
 import listReturns from './container/listReturns';
 import listInventory from './container/listInventory';
+import Orders from './container/orders';
+import listItems from './container/listItems'
 
 
 class Main extends React.Component {
@@ -44,6 +46,8 @@ class Main extends React.Component {
                   <Route path='/listmult' component={CreateOrderMult}></Route>
                   <Route path='/listReturns' component={listReturns}></Route> 
                   <Route path='/listInventory' component={listInventory}></Route>
+                  <Route path='/Orders' component={Orders}></Route>
+                  <Route path='/listItems/:id' component={listItems}></Route>
               </Switch>
             </Router>
                 )
