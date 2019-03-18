@@ -1,7 +1,9 @@
 import {listOrderItems} from '../api/listOrders';
 import listItems from '../components/listItems';
 import { connect } from 'react-redux';
-import {pullAllWith, isEqual} from 'lodash'
+import {pullAllWith, isEqual} from 'lodash';
+import {addReturn} from '../api/listReturn';
+import Swal from 'sweetalert2';
 
 const MapStateToProps = (state) => {
     return {
@@ -29,6 +31,29 @@ const MapDispatchToProps = (dispatch) => {
                     payload: false
                 });
             })()
+        },
+        fileReturn:(returns)=>{
+            (async () => {
+                dispatch({
+                    type: 'SET_LOADING',
+                    payload: true
+                });
+                await addReturn(returns);
+                Swal.fire({
+                    position: 'top-end',
+                    type: 'success',
+                    title: 'Order has been placed!',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  localStorage.setItem('isReturn',true)
+            
+                dispatch({
+                    type: 'SET_LOADING',
+                    payload: false
+                });
+            })()
+
         },
         addToReturn: (orderId, productId, productName, quantity, uniqueId) => {
             let newReturn = {

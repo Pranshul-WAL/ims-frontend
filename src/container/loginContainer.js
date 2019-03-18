@@ -2,6 +2,7 @@ import Login from '../components/login';
 import { connect } from 'react-redux';
 import { login } from '../api/login'
 import {withRouter} from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const mapStateToProps = state => {
     return {
@@ -30,7 +31,14 @@ const mapDispatchToProps = dispatch => {
                     //     props.history.push("/stockist")
                     // }
                 } else {
-                    alert('Enter valid credentials');
+                    Swal.fire({
+                        position: 'center',
+                        type: 'error',
+                        title: 'Please Enter Valid Credentials',
+                        showConfirmButton: false,
+                        timer: 1500,
+        
+                      })
                 }
                 //dispatch({type:'IS_LOGIN'})
                 dispatch({ type: 'CLEAR_FORM' })

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Table, Button } from 'reactstrap';
 // import moment, { isDate } from 'moment';
 import AdminPage from './adminPage';
-import {pullAllWith, isEqual} from 'lodash'
+import {pullAllWith, isEqual} from 'lodash';
+import {Redirect} from 'react-router-dom';
 
 
 class listItems extends Component {
@@ -16,6 +17,7 @@ class listItems extends Component {
 
         this.handleAddToReturn = this.handleAddToReturn.bind(this)
         this.handleRemoveFromReturn = this.handleRemoveFromReturn.bind(this)
+        this.handleFileReturn=this.handleFileReturn.bind(this)
     }
 
     componentDidMount() {
@@ -38,6 +40,9 @@ class listItems extends Component {
         this.setState({
             returnProducts: updatedReturnArray
         })
+    }
+    handleFileReturn(){
+        this.props.fileReturn(this.props.returns)
     }
 
     render() {
@@ -70,9 +75,11 @@ class listItems extends Component {
                                 })}
                             </tbody>
                         </Table>
-                        <Button color="danger"  onClick="">File Returns</Button>
+                        <Button color="danger"  onClick={this.handleFileReturn}>File Returns</Button>
                     </div>
                 </div>
+                {localStorage.getItem('isReturn') ? <Redirect to='/listReturns' /> : null}
+                {localStorage.removeItem('isReturn')}
             </AdminPage>
         );
     }

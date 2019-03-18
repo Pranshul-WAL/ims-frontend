@@ -8,3 +8,15 @@ export const listReturn = () => {
     })
 }
 
+export const addReturn = (returns) => {
+    const axios = axiosInstance();
+    return axios({
+        method: 'POST',
+        url: '/returns/createReturn',
+        data:{
+            userId:localStorage.getItem('userId'),
+            orders:returns
+        }
+    })
+}
+
