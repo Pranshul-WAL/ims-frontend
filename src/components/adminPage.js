@@ -41,7 +41,7 @@ class AdminPage extends Component {
                 <div>
                 <Navbar color="dark" light expand="md">
                     <NavbarBrand  >
-                    <Link to="/" className="UserStyle">WEST AGILE LABS</Link>
+                    <Link to="/" className="style-link">WEST AGILE LABS</Link>
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
@@ -80,7 +80,7 @@ class AdminPage extends Component {
                   </DropdownToggle>
                   <DropdownMenu right>
                   <DropdownItem>
-                    <Link to="/listOrder">List Orders</Link>
+                    <Link to="/Orders">List Orders</Link>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

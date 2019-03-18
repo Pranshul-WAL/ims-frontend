@@ -2,7 +2,8 @@
 
 const initialState={
     dropdownOpen:false,
-    products:[]
+    products:[],
+
 }
 
 const CreateMultOrder=(state=initialState,action)=>{
@@ -20,6 +21,14 @@ const CreateMultOrder=(state=initialState,action)=>{
                 
             }
     }
+        case 'RESET_QUANTITY':{
+            return {
+                ...state.products,
+                products:[{
+                    Quantity:0
+                }]
+            }
+        }
         default: return state
     }
        

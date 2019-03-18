@@ -13,16 +13,27 @@ class CreateOrderMult extends Component{
         this.toggle = this.toggle.bind(this);
         this.handleChangeQuantity=this.handleChangeQuantity.bind(this);
         this.handleChangeCreate=this.handleChangeCreate.bind(this);
+        this.handleQuantity = this.handleQuantity.bind(this);
       }
       toggle(){
           this.props.toggleDropDown();
       }
-      handleChangeQuantity=(productId, quantity, salePrice, productName)=>{
+      
+      handleChangeQuantity=(productId, quantity, salePrice, productName, productQuantity)=>{
+        if (quantity > productQuantity || quantity < 0) {
+            alert('Enter valid quantity.');
+            // this.props.resetQuantity();
+        } else {
         this.props.getMultiOrderQuantity(productId, quantity, salePrice, productName);
+        }
       }
       handleChangeCreate=()=>{
           this.props.createMultOrder(this.props.products);
 
+      }
+      handleQuantity = (props) => {
+          alert('Enter valid qauntity');
+          this.props.quantity = 0;
       }
     render(){
         return(
@@ -42,7 +53,7 @@ class CreateOrderMult extends Component{
                                 return(
                                     <>
                                     <DropdownItem>{productDetails.productName}</DropdownItem>
-                                    <DropdownItem>{<Input type="number"   onChange={(event)=>{this.handleChangeQuantity(productDetails.id, event.target.value, productDetails.salePrice, productDetails.productName)}} placeholder="Enter Quantity"></Input>}</DropdownItem>
+                                    <DropdownItem>{<Input type="number"   onChange={(event)=>{event.target.value > productDetails.Quantity ? this.handleQuantity(): this.handleChangeQuantity(productDetails.id, event.target.value, productDetails.salePrice, productDetails.productName, productDetails.Quantity)}} placeholder="Enter Quantity"></Input>}</DropdownItem>
                                     </>
                                        
                         )})

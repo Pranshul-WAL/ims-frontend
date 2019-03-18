@@ -18,11 +18,6 @@ class UserList extends Component {
     }
     componentDidMount() {
         console.log(this.props.userDetails.length);
-        
-        // (async() => {
-        //     let response = await listUser()
-        //     console.log(response.data);
-        //   })()
         this.props.fetchUsers();
     }
 

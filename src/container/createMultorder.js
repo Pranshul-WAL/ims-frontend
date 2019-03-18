@@ -60,7 +60,20 @@ const MapDispatchToProps=(dispatch)=>{
                 }
             })
         },
-        
+        resetQuantity:()=>dispatch({type:'RESET_QUANTITY'}),
+        // createOrder:(productName,Quantity)=>{
+        //     (async()=>{
+        //         try{
+        //             dispatch({type:'IS_LOADING',payload:true})
+        //             await newOrder(productName,Quantity)
+        //             localStorage.setItem('isOrder',true)
+        //             dispatch({type:'CLEAR_FROM'})
+        //             dispatch({type:'IS_LOADING',payload:false})
+        //         }catch(e){
+        //             console.log(e)
+        //         }
+        //     })()
+        // },
         fetchProducts:()=>{
             (async()=>{
                 dispatch({type:'SET_LOADING', payload:true});
