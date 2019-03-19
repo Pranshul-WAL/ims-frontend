@@ -1,6 +1,6 @@
-import ProductCreate from '../components/productCreate';
+import ProductCreate from '../../components/products/productCreate';
 import { connect } from 'react-redux';
-import { createProduct } from '../api/products';
+import { createProduct } from '../../api/products';
 import Swal from 'sweetalert2'
 
 const MapStateToProps = (state) => {

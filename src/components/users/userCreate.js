@@ -1,7 +1,7 @@
 import React,{Component, } from 'react';
 import {Button,Input,Label,FormGroup} from 'reactstrap';
 import {Redirect} from "react-router-dom";
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 import Swal from 'sweetalert2';
 
 class UserCreate extends Component {

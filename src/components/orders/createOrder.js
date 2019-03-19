@@ -3,7 +3,7 @@ import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
 //import {createNew} from '../api/users';
 // import {axiosInstance} from '../api/index';
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 
 
 class OrderCreate extends Component {

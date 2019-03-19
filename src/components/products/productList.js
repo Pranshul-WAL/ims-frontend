@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Table,Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 class ProductList extends Component {
     constructor(props){
         super(props);

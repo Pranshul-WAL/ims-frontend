@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 
 class UserList extends Component {
     constructor(props) {

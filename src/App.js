@@ -3,23 +3,24 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import login from './container/loginContainer';
 import AdminPage from "./components/adminPage";
 import UserPage from "./components/userPage";
-import UserCreate from "./container/userCreate";
-import UserList from "./container/userList";
+import UserCreate from "./container/users/userCreate";
+import UserList from "./container/users/userList";
 import ProductPage from "./components/productPage";
-import ProductCreate from './container/productCreate';
-import ProductList from "./container/productList";
-import ProductUpdate from './container/productUpdate';
-import UserUpdate from './container/userUpdate';
+import ProductCreate from './container/products/productCreate';
+import ProductList from "./container/products/productList";
+import ProductUpdate from './container/products/productUpdate';
+import UserUpdate from './container/users/userUpdate';
 // import listOrders from './container/listOrders';
 // import ListOrders from './container/listOrders';
 import './App.css';
-import OrderCreate from './container/createOrder';
-import orders from './container/listOrders';
-import CreateOrderMult from './container/createMultorder';
+import OrderCreate from './container/orders/createOrder';
+import orders from './container/orders/listOrders';
+import CreateOrderMult from './container/orders/createMultorder';
 import listReturns from './container/listReturns';
 import listInventory from './container/listInventory';
-import Orders from './container/orders';
-import listItems from './container/listItems'
+import Orders from './container/orders/orders';
+import listItems from './container/products/listItems';
+import Multiple from './container/orders/mulltiple';
 
 
 class Main extends React.Component {
@@ -48,6 +49,7 @@ class Main extends React.Component {
                   <Route path='/listInventory' component={listInventory}></Route>
                   <Route path='/Orders' component={Orders}></Route>
                   <Route path='/listItems/:id' component={listItems}></Route>
+                  <Route path='/multiple' component={Multiple}></Route>
               </Switch>
             </Router>
                 )

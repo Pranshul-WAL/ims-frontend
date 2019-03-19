@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Button,Input} from 'reactstrap';
 import {Redirect} from "react-router-dom";
 import Swal from 'sweetalert2';
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 
 class ProductUpdate extends Component {
     constructor(props){

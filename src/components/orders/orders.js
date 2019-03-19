@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-import AdminPage from './adminPage';
+import AdminPage from '../adminPage';
 import moment from 'moment';
 import { Link } from 'react-router-dom'
 class Orders extends Component {

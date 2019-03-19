@@ -1,7 +1,7 @@
-import UserList from '../components/userList';
+import UserList from '../../components/users/userList';
 import {connect} from 'react-redux';
-import { listUser } from '../api/users';
-import {delete_User} from '../api/users'
+import { listUser } from '../../api/users';
+import {delete_User} from '../../api/users'
 
 const MapStateToProps=(state)=>{
     //console.log(state);
