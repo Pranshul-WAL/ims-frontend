@@ -69,13 +69,13 @@ class listItems extends Component {
                                             <td>{items.productId}</td>
                                             <td>{items.productName}</td>
                                             <td>{items.orderQuantity}</td>
-                                            <td>{this.state.returnProducts.includes(index) ? <Button onClick={() => {this.handleRemoveFromReturn(items.orderId, items.productId, items.productName, items.orderQuantity, index)}}>Remove from return</Button> :<Button onClick={() => {this.handleAddToReturn(items.orderId, items.productId, items.productName, items.orderQuantity, index)}}>Add to return</Button>}</td>
+                                            <td>{items.isReturn ? 'Item Returned' : this.state.returnProducts.includes(index) ? <Button onClick={() => {this.handleRemoveFromReturn(items.orderId, items.productId, items.productName, items.orderQuantity, index)}}>Remove from return</Button> :<Button onClick={() => {this.handleAddToReturn(items.orderId, items.productId, items.productName, items.orderQuantity, index)}}>Add to return</Button>}</td>
                                         </tr>
                                     )
                                 })}
                             </tbody>
                         </Table>
-                        <Button color="danger"  onClick={this.handleFileReturn}>File Returns</Button>
+                       { this.state.returnProducts.length === 0 ? null : <Button color="danger"  onClick={this.handleFileReturn}>File Returns</Button>}
                     </div>
                 </div>
                 {localStorage.getItem('isReturn') ? <Redirect to='/listReturns' /> : null}

@@ -41,7 +41,7 @@ class AdminPage extends Component {
                 <div>
                 <Navbar color="dark" light expand="md">
                     <NavbarBrand  >
-                    <Link to="/" className="style-link">WEST AGILE LABS</Link>
+                    <Link to="/" className="style-link">HOME</Link>
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
