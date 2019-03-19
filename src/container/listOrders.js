@@ -1,7 +1,7 @@
-import ListOrders from '../../components/orders/listOrders';
+import ListOrders from '../components/listOrders';
 import { connect } from 'react-redux';
 
-import { fetchOrders } from '../../api/listOrders';
+import { fetchOrders } from '../api/listOrders';
 
 
 const MapStateToProps = (state) => {

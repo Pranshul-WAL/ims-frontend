@@ -1,6 +1,7 @@
-import UserCreate from '../../components/users/userCreate';
+import UserUpdate from '../components/userUpdate';
 import {connect} from 'react-redux';
-import { createNew } from '../../api/users';
+import { update } from '../api/users';
+// import { listUser } from '../api/users';
 import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
@@ -18,21 +19,22 @@ const MapDispatchToProps=(dispatch)=>{
         getUsername:(value)=>dispatch({type:'GET_NAME',payload:value}),
         getPassword:(value)=>dispatch({type:'GET_PASSWORD', payload:value}),
         getRole:(value)=>dispatch({type:'GET_ROLE', payload:value}),
-        createUser:(username, password, role)=>{
+        updateUser:(username, password, role, userId)=>{
             (async() => {
                 try{
                     dispatch({type:'SET_LOADING', payload:true})
     
-                    await createNew(username, password, role)
+                    await update(username, password, role, userId)
                     Swal.fire({
                         position: 'top-end',
                         type: 'success',
-                        title: 'User has been added',
+                        title: 'User has been Updated',
                         showConfirmButton: false,
                         timer: 1500
                       })
-                    localStorage.setItem('isUserCreate',true)
-                    dispatch({ type: 'CLEAR_FORM' })
+                    localStorage.setItem('isUserUpdate',true)
+    
+                    
                     dispatch({type: 'SET_LOADING', payload: false})
                 } catch(e) {
                     console.log(e)
@@ -43,4 +45,4 @@ const MapDispatchToProps=(dispatch)=>{
     }
 }
 
-export default connect(MapStateToProps,MapDispatchToProps)(UserCreate);
+export default connect(MapStateToProps,MapDispatchToProps)(UserUpdate);

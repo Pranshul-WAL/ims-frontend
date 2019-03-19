@@ -1,8 +1,8 @@
-import {listOrderItems} from '../../api/listOrders';
-import listItems from '../../components/listItems';
+import {listOrderItems} from '../api/listOrders';
+import listItems from '../components/listItems';
 import { connect } from 'react-redux';
 import {pullAllWith, isEqual} from 'lodash';
-import {addReturn} from '../../api/listReturn';
+import {addReturn} from '../api/listReturn';
 import Swal from 'sweetalert2';
 
 const MapStateToProps = (state) => {

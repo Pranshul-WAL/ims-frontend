@@ -1,6 +1,6 @@
-import ProductList from '../../components/products/productList';
+import ProductList from '../components/productList';
 import {connect} from 'react-redux';
-import {listProducts,deleteProduct} from '../../api/products'
+import {listProducts,deleteProduct} from '../api/products'
 
 const MapStateToPrpos=(state)=>{
     return{

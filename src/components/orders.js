@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-import AdminPage from '../adminPage';
+import AdminPage from './adminPage';
 import moment from 'moment';
 import { Link } from 'react-router-dom'
 class Orders extends Component {
@@ -14,7 +14,7 @@ class Orders extends Component {
                 <h1 className="UserStyle user-style">Orders</h1>
                 <div class="row">
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <Table hover>
                             <thead>
                                 <tr>

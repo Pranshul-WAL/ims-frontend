@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import { Button,Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import AdminPage from './adminPage';
 
@@ -18,11 +18,6 @@ class UserList extends Component {
     }
     componentDidMount() {
         console.log(this.props.userDetails.length);
-        
-        // (async() => {
-        //     let response = await listUser()
-        //     console.log(response.data);
-        //   })()
         this.props.fetchUsers();
     }
 
@@ -50,9 +45,9 @@ class UserList extends Component {
                                         <tr>
                                             <td>{userDetails.userName}</td>
                                             <td>{userDetails.role === 1 ? 'Admin': (userDetails.role === 2) ? 'Operator' : 'Stockist'}</td>
-                                            <td><Button onClick={() => { 
-                                                this.deleteHandler(userDetails.id) }}>Delete</Button></td>
-                                            <td><Link to={`/updateUser/${userDetails.id}`}>Update</Link></td>
+                                            <td>{userDetails.id===1 ? null :<Button onClick={() => { 
+                                                this.deleteHandler(userDetails.id) }}>Delete</Button>}</td>
+                                            <td>{userDetails.id===1 ? null :<Link to={`/updateUser/${userDetails.id}`} className="style-link">Update</Link>}</td>
                                         </tr>
                                     )
                                 })
