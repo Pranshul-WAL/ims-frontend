@@ -1,21 +1,33 @@
-import CreateOrderMult from '../components/createMultOrder';
+import Multiple from '../../components/orders/mulltiple';
 import {connect} from 'react-redux';
-import {newOrder} from '../api/order';
-import { listProducts } from '../api/products';
-import {unionBy} from 'lodash';
+import {newOrder} from '../../api/order';
+import { listProducts } from '../../api/products';
+import {unionBy} from 'lodash';// createOrder:(productName,Quantity)=>{
+    //     (async()=>{
+    //         try{
+    //             dispatch({type:'IS_LOADING',payload:true})
+    //             await newOrder(productName,Quantity)
+    //             localStorage.setItem('isOrder',true)
+    //             dispatch({type:'CLEAR_FROM'})
+    //             dispatch({type:'IS_LOADING',payload:false})
+    //         }catch(e){
+    //             console.log(e)
+    //         }
+    //     })()
+    // },
 import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
     return{
         // user:state.user.user,
-        //productName:state.order.productName,
+        // productName:state.order.productName,
         Quantity:state.order.Quantity,
         isLoading:state.order.isLoading,
         productDetails:state.productList.productDetails,
-        dropdownOpen:state.CreateMultOrder.dropdownOpen,
-        products:state.CreateMultOrder.products
+        dropdownOpen:state.multiple.dropdownOpen,
+        products:state.multiple.products
         
-    }
+    }       
 }
 
 const MapDispatchToProps=(dispatch)=>{
@@ -61,19 +73,6 @@ const MapDispatchToProps=(dispatch)=>{
             })
         },
         resetQuantity:()=>dispatch({type:'RESET_QUANTITY'}),
-        // createOrder:(productName,Quantity)=>{
-        //     (async()=>{
-        //         try{
-        //             dispatch({type:'IS_LOADING',payload:true})
-        //             await newOrder(productName,Quantity)
-        //             localStorage.setItem('isOrder',true)
-        //             dispatch({type:'CLEAR_FROM'})
-        //             dispatch({type:'IS_LOADING',payload:false})
-        //         }catch(e){
-        //             console.log(e)
-        //         }
-        //     })()
-        // },
         fetchProducts:()=>{
             (async()=>{
                 dispatch({type:'SET_LOADING', payload:true});
@@ -91,4 +90,4 @@ const MapDispatchToProps=(dispatch)=>{
     }
 }
 
-export default connect(MapStateToProps,MapDispatchToProps)(CreateOrderMult);
+export default connect(MapStateToProps,MapDispatchToProps)(Multiple);

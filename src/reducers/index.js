@@ -1,17 +1,18 @@
 import login from './login';
-import userList from './userList';
-import productList from './productList';
-import userCreate from './userCreate';
-import productCreate from './productCreate';
-import userUpdate from './userUpdate';
-import productUpdate from './productUpdate';
-import order from './createOrder';
+import userList from './users/userList';
+import productList from './products/productList';
+import userCreate from './users/userCreate';
+import productCreate from './products/productCreate';
+import userUpdate from './users/userUpdate';
+import productUpdate from './products/productUpdate';
+import order from './orders/createOrder';
 import listInventory from './listInventory';
-import listOrders from './listOrders';
+import listOrders from './orders/listOrders';
 import listReturns from './listReturns';
-import CreateMultOrder from './createMultorder';
-import orders from './orders';
+import CreateMultOrder from './orders/createMultorder';
+import orders from './orders/orders';
 import listItems from './listItems';
+import multiple from './orders/mulltiple';
 
 
 import {combineReducers} from 'redux';
@@ -31,6 +32,7 @@ const combinedReducer=combineReducers({
     CreateMultOrder,
     orders,
     listItems,
+    multiple
     
 })
 

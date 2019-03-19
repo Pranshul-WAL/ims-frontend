@@ -1,6 +1,6 @@
-import ProductUpdate from '../components/productUpdate';
+import ProductUpdate from '../../components/products/productUpdate';
 import {connect} from 'react-redux';
-import { updateProduct } from '../api/products';
+import { updateProduct } from '../../api/products';
 import Swal from 'sweetalert2'
 
 
