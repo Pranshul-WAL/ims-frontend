@@ -54,12 +54,9 @@ class CreateOrderMult extends Component{
                                     <>
                                     <DropdownItem>{productDetails.productName}</DropdownItem>
                                     <DropdownItem>{<Input type="number"   onChange={(event)=>{event.target.value > productDetails.Quantity ? this.handleQuantity(): this.handleChangeQuantity(productDetails.id, event.target.value, productDetails.salePrice, productDetails.productName, productDetails.Quantity)}} placeholder="Enter Quantity"></Input>}</DropdownItem>
-                                    </>
-                                       
+                                    </>             
                         )})
                     }
-                        
-            
                     </DropdownMenu>
                 </Dropdown>
                 </div>
