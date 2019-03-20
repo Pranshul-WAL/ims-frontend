@@ -54,9 +54,7 @@ class Multiple extends Component{
                                  return(
                                    
                                      <DropdownItem>{productDetails.productName}</DropdownItem>
-                                 
-                                                
-                                       
+           
                          )})
                      }
                         
@@ -67,7 +65,7 @@ class Multiple extends Component{
                 <Input type="number"   onChange={(event)=>{event.target.value > this.props.productDetails.Quantity ? this.handleQuantity(): this.handleChangeQuantity(this.props.productDetails.id, event.target.value, this.props.productDetails.salePrice, this.props.productDetails.productName, this.props.productDetails.Quantity)}} placeholder="Enter Quantity"></Input>
                 <div className="style-right">
                 <Button size="lg" onClick={this.handleAdd}>Add Product</Button>
-                <Button  size="lg" onClick={this.handleChangeCreate}>Place Order</Button>      
+                {this.props.products.length === 0 ? null :<Button  size="lg" onClick={this.handleChangeCreate}>Place Order</Button>}   
                 </div>
             </div>
             </div>
