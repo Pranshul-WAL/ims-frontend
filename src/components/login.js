@@ -46,7 +46,7 @@ class Login extends Component{
     }
     logoutHandler(){
         localStorage.setItem('isLogout',true);
-        //localStorage.clear();
+        localStorage.clear();
         
     }
     render(){

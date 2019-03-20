@@ -2,7 +2,8 @@ import Multiple from '../../components/orders/mulltiple';
 import {connect} from 'react-redux';
 import {newOrder} from '../../api/order';
 import { listProducts } from '../../api/products';
-import {unionBy} from 'lodash';// createOrder:(productName,Quantity)=>{
+import {unionBy} from 'lodash';
+// createOrder:(productName,Quantity)=>{
     //     (async()=>{
     //         try{
     //             dispatch({type:'IS_LOADING',payload:true})
@@ -25,19 +26,39 @@ const MapStateToProps=(state)=>{
         isLoading:state.order.isLoading,
         productDetails:state.productList.productDetails,
         dropdownOpen:state.multiple.dropdownOpen,
-        products:state.multiple.products
+        products:state.multiple.products,
+        inputQuantity:state.multiple.inputQuantity,
+        activeOrder:state.multiple.activeOrder,
+        newProduct:state.multiple.newProduct
         
     }       
 }
 
 const MapDispatchToProps=(dispatch)=>{
     return{
+        addProduct:()=>{
+            dispatch({type:'NEW_PRODUCT'})
+        },
+        CreateActiveOrder:(productId, salePrice, productName) => {
+            let newOrder = {
+                productId,
+                // Quantity: receivedQuantity.length ? Number(receivedQuantity) : 0,
+                salePrice,
+                productName
+            }
+            dispatch({type:'CREATE_ACTIVE', payload:newOrder})
+            // dispatch({type:'RESET_QUANTITY'})
+        },         
+
         getProductname:(value)=>dispatch({type:'GET_PRODUCT_NAME',payload:value}),
         getOrderQuantity:(value)=>dispatch({type:'GET_ORDER_QUANTITY',payload:value}),
-        createMultOrder:(products)=>(async()=>{
+        handletext:(value)=>dispatch({
+            type:'HANDLE_QUANTITY', payload:value
+        }),    
+        createMultOrder:(newProduct)=>(async()=>{
             try{
                 dispatch({type:'IS_LOADING',payload:true})
-                await newOrder(products)
+                await newOrder(newProduct)
                 Swal.fire({
                     position: 'top-end',
                     type: 'success',
@@ -56,12 +77,12 @@ const MapDispatchToProps=(dispatch)=>{
             dispatch((dispatch, getState) => {
                 let newOrderArray
                 let orderArray = getState().CreateMultOrder.products
-                let newOrder = [{
+                let newOrder = {
                     productId,
                     Quantity: receivedQuantity.length ? Number(receivedQuantity) : 0,
                     salePrice,
                     productName
-                }]
+                }
     
                 if(orderArray.length) {
                     newOrderArray = unionBy(newOrder, orderArray, 'productId')
