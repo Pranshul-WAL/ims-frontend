@@ -2,7 +2,7 @@ const initialState={
     productName:'',
     salePrice:'', 
     productDescription:'',
-    Quantity:'',
+    quantity:0,
     isLoading:false
 }
 
@@ -29,7 +29,7 @@ const productUpdate=(state=initialState,action)=>{
         case 'GET_UPDATE_QUANTITY':{
             return{
                 ...state,
-                Quantity:action.payload
+                quantity:action.payload
             }
         }
         case 'SET_LOADING':{

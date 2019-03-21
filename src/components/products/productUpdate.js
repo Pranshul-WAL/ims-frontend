@@ -54,7 +54,7 @@ class ProductUpdate extends Component {
                         <label>Product Description:</label>
                         <Input type="text" value={this.props.productDescription} onChange={this.handleChangeProductDescription} placeholder="Enter description"></Input>
                         <label>Quantity:</label>
-                        <Input type="text" value={this.props.Quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
+                        <Input type="text" value={this.props.quantity} onChange={this.handleChangeQuantity} placeholder="Enter Quantity"></Input>
                         <Button onClick={this.updateProductHandler}>Update</Button>
                         {localStorage.getItem('isProductUpdate') ? <Redirect to='/listProduct' /> : null}
                         {localStorage.removeItem('isProductUpdate')}
