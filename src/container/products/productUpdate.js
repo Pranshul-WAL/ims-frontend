@@ -10,7 +10,7 @@ const MapStateToProps=(state)=>{
         productName:state.productCreate.productName,
         salePrice:state.productCreate.salePrice, 
         productDescription:state.productCreate.productDescription,
-        Quantity:state.productCreate.Quantity
+        quantity: state.productCreate.quantity
     }
 }
 
