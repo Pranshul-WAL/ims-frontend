@@ -23,8 +23,8 @@ class Multiple extends Component{
       handleAdd(){
           this.props.addProduct();
       }
-      handleDropdown(productId, salePrice, productName){
-          this.props.CreateActiveOrder(productId, salePrice, productName)
+      handleDropdown(productId, salePrice, productName, qauntity){
+          this.props.CreateActiveOrder(productId, salePrice, productName, qauntity)
       }
       changeText(e){
           this.props.handletext(e.target.value)
@@ -53,7 +53,7 @@ class Multiple extends Component{
                          {this.props.productDetails.map((productDetails)=>{
                                  return(
                                    
-                                     <DropdownItem onClick={e => {this.handleDropdown(productDetails.id, productDetails.salePrice, productDetails.productName)}}>{productDetails.productName}</DropdownItem>              
+                                     <DropdownItem onClick={e => {this.handleDropdown(productDetails.id, productDetails.salePrice, productDetails.productName, productDetails.Quantity)}}>{productDetails.productName + ", " + "Available Quantity: "+ productDetails.Quantity}</DropdownItem>              
                          )})
                      }
                         
@@ -62,8 +62,11 @@ class Multiple extends Component{
                 </UncontrolledDropdown>
                 </div>
                 {/* <Input type="number"   onChange={(event)=>{event.target.value > this.props.productDetails.Quantity ? this.handleQuantity(): this.handleChangeQuantity(this.props.productDetails.id, event.target.value, this.props.productDetails.salePrice, this.props.productDetails.productName, this.props.productDetails.Quantity)}} placeholder="Enter Quantity"></Input> */}
+                <br></br>
+                {this.props.activeOrder.length === 0 ? null: <label>{this.props.activeOrder.order ? this.props.activeOrder.order.productName : null}</label>}
+                <br></br>
                 <Input type="number" defaultValue={this.props.inputQuantity} onChange={this.changeText} placeholder="Enter Quantity">Add</Input>
-                {this.props.Quantity<= 0 || this.props.inputQuantity > this.props.productDetails.Quantity ? null:<Button size="lg" onClick={this.handleAdd}>Add Product</Button>}
+                {this.props.activeOrder.order ? (this.props.activeOrder.Quantity <= this.props.activeOrder.order.qauntity ? <Button size="lg" onClick={this.handleAdd}> Add Product </Button> : <h1>fds</h1>) : null}
                 
                 <div className="style-right">
                 <Button  size="lg" onClick={this.handleChangeCreate}>Place Order</Button>      

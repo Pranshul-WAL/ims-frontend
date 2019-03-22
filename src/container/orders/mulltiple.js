@@ -37,14 +37,16 @@ const MapStateToProps=(state)=>{
 const MapDispatchToProps=(dispatch)=>{
     return{
         addProduct:()=>{
-            dispatch({type:'NEW_PRODUCT'})
+            dispatch({type:'NEW_PRODUCT'});
+            dispatch({type:'RESET_ACTIVE'});
         },
-        CreateActiveOrder:(productId, salePrice, productName) => {
+        CreateActiveOrder:(productId, salePrice, productName, quantity) => {
             let newOrder = {
                 productId,
                 // Quantity: receivedQuantity.length ? Number(receivedQuantity) : 0,
                 salePrice,
-                productName
+                productName,
+                quantity,
             }
             dispatch({type:'CREATE_ACTIVE', payload:newOrder})
             // dispatch({type:'RESET_QUANTITY'})

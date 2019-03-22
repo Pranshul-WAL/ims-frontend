@@ -84,12 +84,12 @@ class AdminPage extends Component {
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    <Link to="/addOrder">Add Order</Link>
+                    <Link to="/multiple">Add Order</Link>
                   </DropdownItem>
                   </DropdownMenu>
                     </UncontrolledDropdown>:null}
                     <NavItem>
-                    <Link className="nav-link" to="login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
+                    <Link className="nav-link" to="/login"><Button color="danger" onClick={this.logoutHandler}>Logout</Button></Link>
                     </NavItem>
                     </Nav>
                     </Collapse>
