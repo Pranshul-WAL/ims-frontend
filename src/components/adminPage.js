@@ -86,6 +86,10 @@ class AdminPage extends Component {
                   <DropdownItem>
                     <Link to="/multiple">Add Order</Link>
                   </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    <Link to="/listReturns">Returns</Link>
+                  </DropdownItem>
                   </DropdownMenu>
                     </UncontrolledDropdown>:null}
                     <NavItem>
