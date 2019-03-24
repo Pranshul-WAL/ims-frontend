@@ -60,6 +60,13 @@ const multiple=(state=initialState,action)=>{
                 ...initialState
             }
         }
+
+        case 'RESET_ACTIVE': {
+            return {
+                ...state,
+                activeOrder: initialState.activeOrder,
+            }
+        }
         default: return state
     }
        

@@ -12,7 +12,7 @@ const listInventory = (state = initialState, action) => {
         case 'LISTINVENTORY': return {
             ...state,
             inventory: action.payload,
-        }
+        };
         default: return state;
     }
 }
