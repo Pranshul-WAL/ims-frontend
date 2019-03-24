@@ -131,3 +131,9 @@ tr {
 label {
   font-weight: bolder;
 }
+
+.w-100 {
+  max-height: 400px!important;
+  max-width: 100%!important;
+  margin: 0 auto;
+}
