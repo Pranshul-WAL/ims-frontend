@@ -23,8 +23,8 @@ const MapDispatchToProps = (dispatch) => {
             (async () => {
                 try {
                     dispatch({ type: 'SET_LOADING', payload: true })
-
-                    await createProduct(productName, salePrice, productDescription, Quantity)
+                    const Id = JSON.parse(localStorage.getItem('userId'));
+                    await createProduct(productName,Id, salePrice, productDescription, Quantity)
                     Swal.fire({
                         position: 'top-end',
                         type: 'success',

@@ -29,7 +29,8 @@ const MapStateToProps=(state)=>{
         products:state.multiple.products,
         inputQuantity:state.multiple.inputQuantity,
         activeOrder:state.multiple.activeOrder,
-        newProduct:state.multiple.newProduct
+        newProduct:state.multiple.newProduct,
+        orderPlaced:state.multiple.orderPlaced
         
     }       
 }
@@ -37,16 +38,19 @@ const MapStateToProps=(state)=>{
 const MapDispatchToProps=(dispatch)=>{
     return{
         addProduct:()=>{
-            dispatch({type:'NEW_PRODUCT'})
+            dispatch({type:'NEW_PRODUCT'});
+            dispatch({type:'RESET_ACTIVE'});
         },
-        CreateActiveOrder:(productId, salePrice, productName) => {
+        CreateActiveOrder:(productId, salePrice, productName, quantity) => {
             let newOrder = {
                 productId,
                 // Quantity: receivedQuantity.length ? Number(receivedQuantity) : 0,
                 salePrice,
-                productName
+                productName,
+                quantity,
             }
             dispatch({type:'CREATE_ACTIVE', payload:newOrder})
+            // dispatch({type:'ORDER_PLACED'})
             // dispatch({type:'RESET_QUANTITY'})
         },         
 
@@ -66,9 +70,11 @@ const MapDispatchToProps=(dispatch)=>{
                     showConfirmButton: false,
                     timer: 1500
                   })
-                localStorage.setItem('isOrder',true)
-                dispatch({type:'CLEAR_FROM'})
+               
+                // dispatch({type:'CLEAR_FROM'})
                 dispatch({type:'IS_LOADING',payload:false})
+                dispatch({type:'ORDER_PLACED'})
+                localStorage.setItem('isOrder',true)
             }catch(e){
                 console.log(e)
                     }

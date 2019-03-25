@@ -18,6 +18,7 @@ class ListOrders extends Component {
                         <Table hover>
                             <thead>
                                 <tr>
+                                   <th>Index</th>
                                     <th>Order Id</th>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
@@ -30,6 +31,7 @@ class ListOrders extends Component {
                                     return (
 
                                         <tr>
+                                            <td>{this.props.orders.indexOf(orders)}</td>
                                             <td>{orders.orderId}</td>
                                             <td>{orders.productId}</td>
                                             <td>{orders.productName}</td>

@@ -5,7 +5,8 @@ const initialState={
     inputQuantity:'',
     products:[],
     activeOrder:{},
-    newProduct:[]
+    newProduct:[],
+    orderPlaced:false
 
 }
 
@@ -22,6 +23,13 @@ const multiple=(state=initialState,action)=>{
                     Quantity:state.activeOrder.Quantity,
                     salePrice:state.activeOrder.order.salePrice,
                 }]
+            }
+        }
+        case 'ORDER_PLACED':{
+            return{
+                ...state,
+                orderPlaced:true
+
             }
         }
         case 'CREATE_ACTIVE':{
@@ -59,6 +67,16 @@ const multiple=(state=initialState,action)=>{
             return {
                 ...initialState
             }
+        }
+
+        case 'RESET_ACTIVE': {
+            return {
+                ...state,
+                activeOrder: initialState.activeOrder,
+            }
+        }
+        case 'CLEAR_FROM': return {
+            initialState,
         }
         default: return state
     }
