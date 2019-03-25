@@ -17,6 +17,7 @@ class ListReturn extends Component {
             <Table hover>
                 <thead>
                     <tr>
+                       <th>#</th>
                         <th>Order Id</th>
                         <th>Product Id</th>
                         <th>Product Name</th>
@@ -28,6 +29,7 @@ class ListReturn extends Component {
                     {this.props.returns.map((returns) =>{
                         return(
                          <tr>
+                           <td>{this.props.returns.indexOf(returns) + 1}</td>
                             <td>{returns.orderId}</td>
                             <td>{returns.productId}</td>
                             <td>{returns.productName}</td>

@@ -67,6 +67,9 @@ const multiple=(state=initialState,action)=>{
                 activeOrder: initialState.activeOrder,
             }
         }
+        // case 'CLEAR_FROM': return {
+        //     initialState,
+        // }
         default: return state
     }
        

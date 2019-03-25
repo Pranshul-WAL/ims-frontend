@@ -49,13 +49,14 @@ class listItems extends Component {
         return (
             <AdminPage>
                 <br></br>
-                <h1 className="UserStyle user-style"> Orders</h1>
+                <h1 className="UserStyle user-style"> Order Items</h1>
                 <div className="row">
                     <div className="col-sm-2"></div>
                     <div className="col-sm-8">
                         <Table hover>
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
                                     <th>Quantity</th>
@@ -66,6 +67,7 @@ class listItems extends Component {
                                 {this.props.items.map((items, index) => {
                                     return (
                                         <tr>
+                                           <td>{this.props.items.indexOf(items) + 1}</td>
                                             <td>{items.productId}</td>
                                             <td>{items.productName}</td>
                                             <td>{items.orderQuantity}</td>
