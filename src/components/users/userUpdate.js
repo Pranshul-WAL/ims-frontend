@@ -70,7 +70,6 @@ class UserUpdate extends Component {
                                 <Input type="radio" name="radio1" value="Operator" onChange={this.handleChangeRole} />{' '}
                                 Operator
                     </Label>&emsp;&emsp;
-
                             <Label check>
                                 <Input type="radio" name="radio1" value="Stockist" onChange={this.handleChangeRole} />{' '}
                                 Stockist

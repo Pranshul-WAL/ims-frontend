@@ -46,7 +46,7 @@ class Multiple extends Component {
                             <UncontrolledDropdown size="lg" >
                                 <DropdownToggle caret>
                                     Products
-                    </DropdownToggle>
+                                </DropdownToggle>
                                 <DropdownMenu >
                                     <DropdownItem header>Select Products</DropdownItem>
 
@@ -101,8 +101,8 @@ class Multiple extends Component {
                 </Table>
 
 
-
-                {JSON.parse(localStorage.getItem('isOrder')) ? <Redirect to='/Orders' /> : null}
+                {this.props.orderPlaced ? <Redirect to='/Orders' /> : null}
+                {/* {JSON.parse(localStorage.getItem('isOrder')) ? <Redirect to='/Orders' /> : null} */}
                 {localStorage.removeItem('isOrder')}
 
             </AdminPage>
