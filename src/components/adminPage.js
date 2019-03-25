@@ -25,8 +25,8 @@ const items = [
   {
     src: first,
     altText: 'Slide 1',
-    caption: 'Slide 1',
-    header: 'Slide 1 Header'
+    // caption: 'Slide 1',
+    // header: 'Slide 1 Header'
   },
   {
     src: second,
@@ -62,7 +62,7 @@ class AdminPage extends Component {
   }
   render() {
     return (
-            <>
+      <>
         <div>
           <Navbar color="dark" light expand="md">
             <NavbarBrand  >
@@ -128,8 +128,9 @@ class AdminPage extends Component {
           this.props.children ? this.props.children : <div>
           <div className="">{Example()}</div>
                 </div>
-                }
-            </>
+        }
+        <h1 align='center' className="style-link">Order Products!  Generate Returns!</h1>
+      </>
 
               );
           }
