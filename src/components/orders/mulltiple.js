@@ -67,10 +67,10 @@ class Multiple extends Component {
                         {this.props.activeOrder.length === 0 ? null : <label>{this.props.activeOrder.order ? this.props.activeOrder.order.productName + "  Available Quantity:" + this.props.activeOrder.order.quantity : null}</label>}
                         <br></br>
                         <Input type="number" defaultValue={this.props.inputQuantity} onChange={this.changeText} placeholder="Enter Quantity">Add</Input>
-                        {this.props.activeOrder.order ? <Button size="lg" onClick={this.handleAdd}> Add Product </Button> : null}
+                        {this.props.activeOrder.order ? this.props.activeOrder.Quantity ? this.props.activeOrder.Quantity > 0 && this.props.activeOrder.Quantity <= this.props.activeOrder.order.quantity ? <Button size="lg" onClick={this.handleAdd}> Add Product </Button>:null : null : null}
 
                         <div className="style-right">
-                            <Button size="lg" onClick={this.handleChangeCreate}>Place Order</Button>
+                            {this.props.newProduct ? this.props.newProduct.length ? <Button size="lg" onClick={this.handleChangeCreate}>Place Order</Button> : null : null}
                         </div>
                     </div>
                 </div>
