@@ -29,7 +29,8 @@ const MapStateToProps=(state)=>{
         products:state.multiple.products,
         inputQuantity:state.multiple.inputQuantity,
         activeOrder:state.multiple.activeOrder,
-        newProduct:state.multiple.newProduct
+        newProduct:state.multiple.newProduct,
+        orderPlaced:state.multiple.orderPlaced
         
     }       
 }
@@ -49,6 +50,7 @@ const MapDispatchToProps=(dispatch)=>{
                 quantity,
             }
             dispatch({type:'CREATE_ACTIVE', payload:newOrder})
+            // dispatch({type:'ORDER_PLACED'})
             // dispatch({type:'RESET_QUANTITY'})
         },         
 
@@ -69,8 +71,9 @@ const MapDispatchToProps=(dispatch)=>{
                     timer: 1500
                   })
                
-                dispatch({type:'CLEAR_FROM'})
+                // dispatch({type:'CLEAR_FROM'})
                 dispatch({type:'IS_LOADING',payload:false})
+                dispatch({type:'ORDER_PLACED'})
                 localStorage.setItem('isOrder',true)
             }catch(e){
                 console.log(e)
