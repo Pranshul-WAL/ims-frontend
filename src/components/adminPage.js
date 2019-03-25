@@ -48,7 +48,7 @@ class AdminPage extends Component {
     };
   }
   logoutHandler() {
-    //localStorage.clear();
+    localStorage.clear();
     localStorage.removeItem('isLogin');
   }
   toggle() {
@@ -93,6 +93,10 @@ class AdminPage extends Component {
                     <DropdownItem>
                       <Link to="/addProduct">ADD PRODUCTS</Link>
                     </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                      <Link to="/listInventory">HISTORY</Link>
+                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown> : null}
                 {JSON.parse(localStorage.getItem("role")) === 1 || JSON.parse(localStorage.getItem("role")) === 2 ? <UncontrolledDropdown nav inNavbar>
@@ -123,9 +127,10 @@ class AdminPage extends Component {
         {
           this.props.children ? this.props.children : <div>
           <div className="">{Example()}</div>
+          <h1 align='center' className="style-link">Order Products!  Generate Returns!</h1>
                 </div>
         }
-        <h1 align='center' className="style-link">Order Products!  Generate Returns!</h1>
+       
       </>
 
               );
