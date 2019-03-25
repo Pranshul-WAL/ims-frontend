@@ -25,6 +25,7 @@ class ProductList extends Component {
                 <Table hover  className="table-padding">
                     <thead>
                         <tr>
+                           <th>#</th>
                             <th>Product Name</th>
                             <th>Sale Price</th>
                             <th>Product Description</th>
@@ -38,6 +39,7 @@ class ProductList extends Component {
                             {this.props.productDetails.map((productDetails)=>{
                                 return(
                                     <tr>
+                                       <td>{this.props.productDetails.indexOf(productDetails) + 1}</td>
                                         <td>{productDetails.productName}</td>
                                         <td>{productDetails.salePrice}</td>
                                         <td>{productDetails.productDescription}</td>

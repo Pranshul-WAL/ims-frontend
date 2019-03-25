@@ -33,6 +33,7 @@ class UserList extends Component {
                         <Table hover>
                             <thead>
                                 <tr>
+                                   <th>#</th>
                                     <th>Username</th>
                                     <th>Role</th>
                                     <th>Delete</th>
@@ -43,6 +44,7 @@ class UserList extends Component {
                                 {this.props.userDetails.map((userDetails) => {
                                     return (
                                         <tr>
+                                            <td>{this.props.userDetails.indexOf(userDetails) + 1}</td>
                                             <td>{userDetails.userName}</td>
                                             <td>{userDetails.role === 1 ? 'Admin': (userDetails.role === 2) ? 'Operator' : 'Stockist'}</td>
                                             <td>{userDetails.id===1 ? null :<Button onClick={() => { 

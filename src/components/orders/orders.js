@@ -13,11 +13,12 @@ class Orders extends Component {
                 <br></br>
                 <h1 className="UserStyle user-style">Orders</h1>
                 <div class="row">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3"></div>
                     <div class="col-sm-6">
                         <Table hover>
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Order Id</th>
                                     <th>User Id</th>
                                     <th>Placed On</th>
@@ -28,6 +29,7 @@ class Orders extends Component {
                                 {this.props.orders.map((orders) => {
                                     return (
                                         <tr>
+                                            <td>{this.props.orders.indexOf(orders) + 1}</td>
                                             <td>{orders.id}</td>
                                             <td>{orders.userId}</td>
                                             <td>{moment(orders.created).format('DD MMM YYYY')}</td>

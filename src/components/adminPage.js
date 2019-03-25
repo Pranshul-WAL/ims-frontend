@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import first from '../first.jpg';
 import second from '../second.jpg';
-import third from '../third.jpg';
+import third from '../third.jpeg';
 
 
 import {
@@ -25,20 +25,16 @@ const items = [
   {
     src: first,
     altText: 'Slide 1',
-    // caption: 'Slide 1',
-    // header: 'Slide 1 Header'
+    
   },
   {
     src: second,
     altText: 'Slide 2',
-    // caption: 'Slide 2',
-    // header: 'Slide 2 Header'
+    
   },
   {
     src: third,
     altText: 'Slide 3',
-    // caption: 'Slide 3',
-    // header: 'Slide 3 Header'
   }
 ];
 const Example = () => <UncontrolledCarousel items={items} />;

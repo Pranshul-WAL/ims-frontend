@@ -68,9 +68,10 @@ const MapDispatchToProps=(dispatch)=>{
                     showConfirmButton: false,
                     timer: 1500
                   })
-                localStorage.setItem('isOrder',true)
+               
                 dispatch({type:'CLEAR_FROM'})
                 dispatch({type:'IS_LOADING',payload:false})
+                localStorage.setItem('isOrder',true)
             }catch(e){
                 console.log(e)
                     }

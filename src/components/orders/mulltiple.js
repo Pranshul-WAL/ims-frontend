@@ -102,7 +102,7 @@ class Multiple extends Component {
 
 
 
-                {JSON.parse(localStorage.getItem('isOrder')) ? <Redirect to='/listOrder' /> : null}
+                {JSON.parse(localStorage.getItem('isOrder')) ? <Redirect to='/Orders' /> : null}
                 {localStorage.removeItem('isOrder')}
 
             </AdminPage>
