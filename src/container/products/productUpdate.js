@@ -6,20 +6,20 @@ import Swal from 'sweetalert2'
 
 const MapStateToProps=(state)=>{
     return{
-        isLoading:state.productCreate.isLoading,
-        productName:state.productCreate.productName,
-        salePrice:state.productCreate.salePrice, 
-        productDescription:state.productCreate.productDescription,
-        quantity: state.productCreate.quantity
+        isLoading:state.productUpdate.isLoading,
+        productName:state.productUpdate.productName,
+        salePrice:state.productUpdate.salePrice, 
+        productDescription:state.productUpdate.productDescription,
+        quantity: state.productUpdate.quantity
     }
 }
 
 const MapDispatchToProps=(dispatch)=>{
     return{
-        getProductname:(value)=>dispatch({type:'GET_PRODUCT_NAME',payload:value}),
-        getSalePrice:(value)=>dispatch({type:'GET_SALE_PRICE',payload:value}),
-        getProductDescription:(value)=>dispatch({type:'GET_DESCRIPTION', payload:value}),
-        getUpdateQuantity:(value)=>dispatch({type:'GET_UPDATE_QUANTITY',payload:value}),
+        getProductname:(value)=>dispatch({type:'UGET_PRODUCT_NAME',payload:value}),
+        getSalePrice:(value)=>dispatch({type:'UGET_SALE_PRICE',payload:value}),
+        getProductDescription:(value)=>dispatch({type:'UGET_DESCRIPTION', payload:value}),
+        getUpdateQuantity:(value)=>dispatch({type:'UGET_UPDATE_QUANTITY',payload:value}),
         updateProduct:(productName,salePrice,productDescription,Quantity,productId)=>{
 
             (async() => {

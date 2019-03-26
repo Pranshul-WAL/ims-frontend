@@ -27,7 +27,7 @@ class ProductUpdate extends Component {
         this.props.getUpdateQuantity(e.target.value);
     }
     updateProductHandler() {
-        if (this.props.productName === "" || this.props.salePrice === "" || this.props.productDescription === "" || this.props.Quantity === "" || this.props.match.params.productId === "") {
+        if (this.props.productName === "" || (this.props.salePrice === "" || this.props.salePrice <= 0) || this.props.productDescription === "" || (this.props.quantity === "" || this.props.quantity <= 0) || this.props.match.params.productId === "") {
             Swal.fire({
                 position: 'center',
                 type: 'error',
@@ -37,7 +37,7 @@ class ProductUpdate extends Component {
 
             })
         } else {
-            this.props.updateProduct(this.props.productName, this.props.salePrice, this.props.productDescription, this.props.Quantity, this.props.match.params.productId)
+            this.props.updateProduct(this.props.productName, this.props.salePrice, this.props.productDescription, this.props.quantity, this.props.match.params.productId)
         }
     }
 
