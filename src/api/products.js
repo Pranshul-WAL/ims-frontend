@@ -24,7 +24,7 @@ export const createProduct = (productName, userId, salePrice, productDescription
 }
 
 
-export const updateProduct = (productName, salePrice, productDescription, Quantity, productId, userId) => {
+export const updateProduct = (productName, salePrice, productDescription, Quantity, productId) => {
     const axios = axiosInstance();
     return axios({
         method: 'PUT',
@@ -34,7 +34,7 @@ export const updateProduct = (productName, salePrice, productDescription, Quanti
             salePrice: salePrice,
             productDescription: productDescription,
             Quantity: Quantity,
-            userId:userId
+            userId:localStorage.getItem('userId')
         }
     })
 }

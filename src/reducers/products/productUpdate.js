@@ -8,25 +8,25 @@ const initialState={
 
 const productUpdate=(state=initialState,action)=>{
     switch(action.type){
-        case 'GET_PRODUCT_NAME':{
+        case 'UGET_PRODUCT_NAME':{
             return{
                 ...state,
                 productName:action.payload
             }
         }
-        case 'GET_SALE_PRICE':{
+        case 'UGET_SALE_PRICE':{
             return{
                 ...state,
                 salePrice:action.payload
             }
         }
-        case 'GET_DESCRIPTION':{
+        case 'UGET_DESCRIPTION':{
             return{
                 ...state,
                 productDescription:action.payload
             }
         }
-        case 'GET_UPDATE_QUANTITY':{
+        case 'UGET_UPDATE_QUANTITY':{
             return{
                 ...state,
                 quantity:action.payload

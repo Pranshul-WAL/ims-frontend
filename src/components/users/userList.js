@@ -3,6 +3,7 @@ import { Table } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import AdminPage from '../adminPage';
+import Paginate from '../pagination'
 
 class UserList extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class UserList extends Component {
 
     render() {
         return (
+            <>
             <AdminPage>
             <br></br>
             <h1 className="UserStyle user-style"> Users</h1>
@@ -59,6 +61,8 @@ class UserList extends Component {
                     </div>
                 </div>
             </AdminPage>
+            <Paginate/>
+            </>
         );
     }
 }

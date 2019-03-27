@@ -1,6 +1,7 @@
 const initialState = {
     isLoading: false,
     inventory: []
+
 };
 
 const listInventory = (state = initialState, action) => {

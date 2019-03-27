@@ -37,7 +37,7 @@ class ProductUpdate extends Component {
 
             })
         } else {
-            this.props.updateProduct(this.props.productName, this.props.salePrice, this.props.productDescription, this.props.Quantity, this.props.match.params.productId)
+            this.props.updateProduct(this.props.productName, this.props.salePrice, this.props.productDescription, this.props.quantity, this.props.match.params.productId)
         }
     }
 
