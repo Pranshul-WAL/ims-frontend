@@ -90,9 +90,9 @@ class AdminPage extends Component {
                       <Link to="/listProduct">LIST PRODUCTS</Link>
                     </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>
+                    {JSON.parse(localStorage.getItem("role")) === 3 ? null : <DropdownItem>
                       <Link to="/addProduct">ADD PRODUCTS</Link>
-                    </DropdownItem>
+                    </DropdownItem>}
                     <DropdownItem divider />
                     <DropdownItem>
                       <Link to="/listInventory">HISTORY</Link>

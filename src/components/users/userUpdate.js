@@ -73,9 +73,10 @@ class UserUpdate extends Component {
                             <Label check>
                                 <Input type="radio" name="radio1" value="Stockist" onChange={this.handleChangeRole} />{' '}
                                 Stockist
-                    </Label><br />
+                    </Label>
                             {/* <Button onClick={()=>
                         { this.props.createUserHandler(username,password,role)}}>Create</Button> */}
+                        <br></br>
                             <Button onClick={this.updateUserHandler}>Update</Button>
                         </FormGroup>
                         {localStorage.getItem('isUserUpdate') ? <Redirect to='/list' /> : null}
